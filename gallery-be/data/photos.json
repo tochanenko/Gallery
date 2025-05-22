@@ -1,0 +1,24 @@
+[
+    {
+        "id": "000001",
+        "title": "Simple photo",
+        "url": "https://photographers.ua/thumbnails/pictures/11251/800x20160616_110625.jpg",
+        "description": "A very nice photo",
+        "date": "Thu May 22 2025 18:06:16 GMT+0300 (Eastern European Summer Time)",
+        "ratings": [
+            {
+                "userId": "99749358",
+                "rating": 5
+            }
+        ],
+        "comments": [
+            {
+                "id": "lfjsdlkjflksdlksd",
+                "userId": "99749358",
+                "text": "I would like to go there!",
+                "name": "Jack2000",
+                "date": "Thu May 22 2025 18:06:16 GMT+0300 (Eastern European Summer Time)"
+            }
+        ]
+    }
+]
