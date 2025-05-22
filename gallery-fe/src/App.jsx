@@ -1,10 +1,9 @@
-import Header from "./components/UI/Header/Header";
 import MainContaner from "./components/UI/MainContainer/MainContainer";
-import Footer from "./components/UI/Footer/Footer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import HomePage from "./pages/Home";
 import CategoryPage from "./pages/Category";
+import PhotoPage from "./pages/Photo";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: 'category/:categoryName',
         element: <CategoryPage />
+      },
+      {
+        path: 'photo/:photoId',
+        element: <PhotoPage />
       }
     ]
   }

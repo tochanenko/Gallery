@@ -10,6 +10,15 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+.header a {
+  text-decoration: none;
+}
+
+.header a:visited,
+.header a:link {
+  color: black;
+}
+
 .header .header_container {
   display: flex;
   align-items: center;

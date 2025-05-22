@@ -11,7 +11,7 @@ const CATEGORIES = [
 export default function Header() {
   return <header className={classes.header}>
     <div className={`container ${classes.header_container}`}>
-      <div className={classes.logo}>VPhotos_</div>
+      <div className={classes.logo}><Link to="/">VPhotos_</Link></div>
       <div className={classes.categories}>
         <ul>
           {CATEGORIES.map(category => <li key={category}><Link to={`/category/${category}`}>{category}</Link></li>)}
