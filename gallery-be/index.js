@@ -19,14 +19,34 @@ app.use((req, res, next) => {
   next();
 });
 
-// Get all Photosno
+// Get all Photos
 app.get('/photos', async (req, res) => {
   const photos = await getPhotosFromFile();
   res.status(200).json({ photos });
 });
 
+// Get Photos by Category
+app.get('/photos/:categoryId', async (req, res) => {
+  const photos = await getPhotosFromFile();
+
+  const filteredPhotos = photos.filter(photo => photo.category === req.params.categoryId);
+
+  if (filteredPhotos.length === 0) {
+    return res.status(400).json({ message: 'Category is empty or invalid' });
+  }
+
+  return res.status(200).json({ photos: filteredPhotos });
+});
+
+// Get all categories
+app.get('/categories', async (req, res) => {
+  const photos = await getPhotosFromFile();
+  const categories = [...new Set(photos.map(photo => photo.category))];
+  return res.status(200).json({ categories });
+});
+
 // Get single Photo
-app.get('/photos/:photoId', async (req, res) => {
+app.get('/photo/:photoId', async (req, res) => {
   const photos = await getPhotosFromFile();
   const photo = photos.find(p => p.id === req.params.photoId);
   res.status(200).json({ photo });
