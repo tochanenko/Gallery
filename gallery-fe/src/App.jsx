@@ -1,8 +1,8 @@
-import MainContaner from "./components/UI/MainContainer/MainContainer";
+import MainContaner from "./components/MainContainer/MainContainer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import HomePage from "./pages/Home";
-import CategoryPage from "./pages/Category";
+import CategoryPage, { loader as photosByCategoryLoader } from "./pages/Category";
 import PhotoPage from "./pages/Photo";
 
 const router = createBrowserRouter([
@@ -13,7 +13,9 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       {
         path: 'category/:categoryName',
-        element: <CategoryPage />
+        id: 'category-photos',
+        element: <CategoryPage />,
+        loader: photosByCategoryLoader
       },
       {
         path: 'photo/:photoId',

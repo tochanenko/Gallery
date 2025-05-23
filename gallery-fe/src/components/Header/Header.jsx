@@ -5,7 +5,7 @@ const CATEGORIES = [
   'animals',
   'city',
   'mountains',
-  'flowers'
+  'flowers_plants'
 ];
 
 export default function Header() {

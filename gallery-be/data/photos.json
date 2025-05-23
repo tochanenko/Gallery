@@ -1,11 +1,11 @@
 [
   {
-    "id": "000001",
-    "title": "Simple photo",
-    "url": "https://photographers.ua/thumbnails/pictures/11251/800x20160616_110625.jpg",
-    "description": "A very nice photo",
-    "date": "Thu May 22 2025 18:06:16 GMT+0300 (Eastern European Summer Time)",
-    "category": "mountains",
+    "id": "cd723761-e35b-4098-addc-07c5f43ed8ee",
+    "title": "",
+    "url": "/animals/20220622_182808.jpg",
+    "description": "",
+    "date": "Wed Jun 22 2022 00:00:00 GMT+0300 (Eastern European Summer Time)",
+    "category": "animals",
     "ratings": [
       {
         "userId": "99749358",
@@ -27,16 +27,6 @@
         "name": "PS_Master"
       }
     ]
-  },
-  {
-    "id": "cd723761-e35b-4098-addc-07c5f43ed8ee",
-    "title": "",
-    "url": "/animals/20220622_182808.jpg",
-    "description": "",
-    "date": "Wed Jun 22 2022 00:00:00 GMT+0300 (Eastern European Summer Time)",
-    "category": "animals",
-    "ratings": [],
-    "comments": []
   },
   {
     "id": "09cf711c-7cf4-4215-9de8-fa7b9e40bb59",

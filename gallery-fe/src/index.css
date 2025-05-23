@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'KyivRegion';
-  src: url('./fonts/KyivRegion-Regular.ttf') format('truetype');
+  src: url('./assets/fonts/KyivRegion-Regular.ttf') format('truetype');
 }
 
 body {
