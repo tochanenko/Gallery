@@ -2,7 +2,7 @@
   --gap-s: 16px;
   --gap-m: 2%;
   --gap-l: 2%;
-  --gap-xl: 1.25%;
+  --gap-xl: 2%;
 }
 
 .photo_grid {
@@ -19,20 +19,20 @@
   background-color: black;
 }
 
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 1200px) {
   .photo_grid {
     gap: var(--gap-xl);
   }
 
   .photo {
-    width: 19%;
-    padding-top: 19%;
+    width: 32%;
+    padding-top: 32%;
 
     margin-bottom: var(--gap-xl);
   }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1200px) {
   .photo_grid {
     gap: var(--gap-l);
   }
@@ -45,7 +45,7 @@
   }
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 768px) {
   .photo_grid {
     gap: var(--gap-m);
   }
@@ -58,7 +58,7 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
   .photo {
     width: 100%;
     padding-top: 100%;
