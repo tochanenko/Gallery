@@ -1,9 +1,9 @@
 .header {
   width: 100%;
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
 
-  & a {
+  a {
     text-decoration: none;
 
     &:visited,
@@ -12,48 +12,41 @@
     }
   }
 
-  & .logo {
+  .logo {
     display: inline-block;
-
     font-family: 'KyivRegion';
     color: rgb(3, 63, 3);
-
-    /* background-color: beige; */
-
     font-size: 2rem;
     vertical-align: center;
   }
 
-  & .categories,
-  & .social {
+  .categories,
+  .social {
     display: inline-block;
 
-    & ul {
+    ul {
       padding: 0;
       margin: 0;
     }
 
-    & li {
+    li {
       display: inline-block;
       padding: 16px 24px;
-
       text-transform: uppercase;
       font-weight: 600;
-
       text-decoration: none;
       cursor: pointer;
-    }
-  }
 
-  & .categories li:hover {
-    text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
-
-.desktop_nav {
+.desktop_nav,
+.mobile_nav {
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -62,10 +55,7 @@
 .mobile_nav {
   display: none;
 
-  align-items: center;
-  justify-content: space-between;
-
-  & .mobile_header {
+  .mobile_header {
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -75,29 +65,27 @@
 .popup_header {
   display: block;
 
-  & .categories,
-  & .social {
+  .categories,
+  .social {
     display: block;
 
-    & ul {
+    ul {
       padding: 0;
       margin: 0;
     }
 
-    & li {
+    li {
       display: block;
       padding: 16px 24px;
-
       text-transform: uppercase;
       font-weight: 600;
-
       text-decoration: none;
       cursor: pointer;
-    }
-  }
 
-  & .categories li:hover {
-    text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
@@ -117,4 +105,12 @@
   }
 }
 
-/* CATEGORIES */
+@media screen and (min-width: 769px) {
+  .popup_header {
+    display: none;
+  }
+}
+
+.gone {
+  display: none !important;
+}

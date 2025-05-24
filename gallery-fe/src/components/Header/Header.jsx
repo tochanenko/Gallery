@@ -27,12 +27,12 @@ const CATEGORIES = [
 export default function Header() {
   const [mobileHeaderVisible, setMobileHeaderVisible] = useState(false);
 
-  const headerLogo = <div className={classes.logo}><Link to="/">VPhotos_</Link></div>;
+  const headerLogo = <div className={classes.logo}><Link to="/" onClick={handleResetMobileHeaderVisibility}>VPhotos_</Link></div>;
 
   const headerContent = <>
     <div className={classes.categories}>
       <ul>
-        {CATEGORIES.map(category => <li key={category.id}><Link to={`/category/${category.id}`}>{category.name}</Link></li>)}
+        {CATEGORIES.map(category => <li key={category.id}><Link to={`/category/${category.id}`} onClick={handleResetMobileHeaderVisibility}>{category.name}</Link></li>)}
       </ul>
     </div>
     <div className={classes.social}>
@@ -47,8 +47,11 @@ export default function Header() {
   </div>;
 
   function handleToggleMobileHeaderVisibility() {
-    console.log(mobileHeaderVisible);
     setMobileHeaderVisible(prevValue => !prevValue);
+  }
+
+  function handleResetMobileHeaderVisibility() {
+    setMobileHeaderVisible(false);
   }
 
   return <header className={classes.header}>
@@ -64,7 +67,7 @@ export default function Header() {
         {mobileHeader}
       </div>
 
-      <div className={classes.popup_header} style={{ display: mobileHeaderVisible ? 'block' : 'none' }}>
+      <div className={`${classes.popup_header} ${!mobileHeaderVisible ? classes.gone : undefined}`}>
         {headerContent}
       </div>
     </div>
