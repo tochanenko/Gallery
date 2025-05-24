@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Await, useParams, useRouteLoaderData } from "react-router-dom";
 import PhotoGrid from "../components/PhotoGrid/PhotoGrid";
+import { API_URL } from "../utils/constants";
 
 export default function CategoryPage() {
   const params = useParams();
@@ -19,7 +20,7 @@ export default function CategoryPage() {
 }
 
 async function loadPhotosByCategory(categoryName) {
-  const response = await fetch(`http://localhost:3001/photos/${categoryName}`);
+  const response = await fetch(`${API_URL}/photos/${categoryName}`);
 
   if (!response.ok) {
     throw new Response(JSON.stringify({ message: 'Cound not fetch photos' }, { status: 500 }));

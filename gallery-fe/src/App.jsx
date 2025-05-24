@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import HomePage from "./pages/Home";
 import CategoryPage, { loader as photosByCategoryLoader } from "./pages/Category";
-import PhotoPage from "./pages/Photo";
+import PhotoPage, { loader as photoByIdLoader } from "./pages/Photo";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +19,9 @@ const router = createBrowserRouter([
       },
       {
         path: 'photo/:photoId',
-        element: <PhotoPage />
+        id: 'photo',
+        element: <PhotoPage />,
+        loader: photoByIdLoader
       }
     ]
   }

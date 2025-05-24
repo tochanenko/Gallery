@@ -3,9 +3,19 @@
   src: url('./assets/fonts/KyivRegion-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'e-Ukraine Light';
+  src: url('./assets/fonts/e-ukraine-light_w.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'e-Ukraine Head Light';
+  src: url('./assets/fonts/e-ukrainehead-light_w.ttf') format('truetype');
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'e-Ukraine Light';
 }
 
 .container {

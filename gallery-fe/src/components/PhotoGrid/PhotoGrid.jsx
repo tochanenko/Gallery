@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import classes from "./PhotoGrid.module.css";
+import { PHOTO_URL } from '../../utils/constants';
+import { Link } from "react-router-dom";
 
 export default function PhotoGrid({ photos }) {
   return <>
@@ -20,12 +22,14 @@ function Photo({ photo }) {
 
   return <>
     <div className={classes.photo}>
-      <img
-        className={loading ? classes.blur : undefined}
-        src={`http://materials.tochanenko.com/gallery_photos${photo.url}`}
-        alt={photo.title}
-        onLoad={handleLoad}
-      />
+      <Link to={`/photo/${photo.id}`}>
+        <img
+          className={loading ? classes.blur : undefined}
+          src={`${PHOTO_URL}${photo.url}`}
+          alt={photo.title}
+          onLoad={handleLoad}
+        />
+      </Link>
     </div>
   </>;
 }

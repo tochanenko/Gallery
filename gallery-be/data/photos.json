@@ -540,13 +540,26 @@
   },
   {
     "id": "fe762d1f-5f23-45ce-b335-021875937ff4",
-    "title": "",
+    "title": "Pedestrian Bridge",
     "url": "/city/20240507_195146.jpg",
-    "description": "",
+    "description": "May is the month of a lush greenery and nice long strolls through the city parks",
     "date": "Tue May 07 2024 00:00:00 GMT+0300 (Eastern European Summer Time)",
     "category": "city",
-    "ratings": [],
-    "comments": []
+    "ratings": [
+      {
+        "userId": "aba5bc2b-e51b-4c88-ad15-2c1b857f9159",
+        "rating": 5
+      }
+    ],
+    "comments": [
+      {
+        "id": "aba5bc2b-e51b-4c88-ad15-2c1b857f9158",
+        "userId": "aba5bc2b-e51b-4c88-ad15-2c1b857f9159",
+        "text": "I love Kyiv in May!",
+        "name": "Anrii_Krutyi",
+        "date": "Thu May 22 2025 18:06:16 GMT+0300 (Eastern European Summer Time)"
+      }
+    ]
   },
   {
     "id": "9b50e283-12b3-45b0-8710-7c7fb077eb1f",
