@@ -1,7 +1,13 @@
+:root {
+  --gap-s: 16px;
+  --gap-m: 2%;
+  --gap-l: 2%;
+  --gap-xl: 1.25%;
+}
+
 .photo_grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .photo {
@@ -10,10 +16,58 @@
   position: relative;
   overflow: hidden;
 
-  margin-bottom: 1%;
-
   background-color: black;
 }
+
+@media screen and (min-width: 980px) {
+  .photo_grid {
+    gap: var(--gap-xl);
+  }
+
+  .photo {
+    width: 19%;
+    padding-top: 19%;
+
+    margin-bottom: var(--gap-xl);
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .photo_grid {
+    gap: var(--gap-l);
+  }
+
+  .photo {
+    width: 32%;
+    padding-top: 32%;
+
+    margin-bottom: var(--gap-l);
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .photo_grid {
+    gap: var(--gap-m);
+  }
+
+  .photo {
+    width: 49%;
+    padding-top: 49%;
+
+    margin-bottom: var(--gap-m);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .photo {
+    width: 100%;
+    padding-top: 100%;
+
+    margin-bottom: var(--gap-s);
+  }
+}
+
+
 
 .photo img {
   position: absolute;
@@ -21,7 +75,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  
+
   width: 100%;
   height: 100%;
   object-fit: cover;
