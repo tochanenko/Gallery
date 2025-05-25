@@ -27,27 +27,23 @@
     line-height: 16px;
 
     .rating {
+      height: 16px;
+      width: 18px;
 
+      cursor: pointer;
 
-      svg {
+      .rating_circle {
+        display: inline-block;
         height: 16px;
         width: 16px;
-        padding-right: 2px;
+        border-radius: 8px;
 
-        cursor: pointer;
-
-        .st0 {
-          fill: white;
-        }
+        background: rgba(0, 0, 0, 0.5);
       }
+    }
 
-      .filled .st0 {
-        fill: black;
-      }
-
-      .hovered .st0 {
-        fill: orange;
-      }
+    .hovered .rating_circle {
+      background: orange !important;
     }
 
     .date {
@@ -55,6 +51,5 @@
       margin-left: 8px;
       color: rgba(0, 0, 0, 0.5);
     }
-
   }
 }
