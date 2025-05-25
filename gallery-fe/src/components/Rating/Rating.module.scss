@@ -1,0 +1,29 @@
+.rating {
+  height: 16px;
+  width: 18px;
+
+  cursor: pointer;
+
+  .rating_circle {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.hovered .rating_circle {
+  background: orange !important;
+}
+
+.date {
+  margin-top: 0;
+  margin-left: 8px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.rating_number {
+  padding-right: 8px;
+}

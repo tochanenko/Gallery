@@ -571,7 +571,7 @@
             },
             {
                 "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
-                "rating": 5
+                "rating": 3
             },
             {
                 "userId": "fe762d1f-5f23-45ce-b335-021875937fa5",
@@ -579,6 +579,18 @@
             },
             {
                 "userId": "fe762d1f-5f23-45ce-b335-021875937fa8",
+                "rating": 5
+            },
+            {
+                "userId": "0fc9db94-aaa1-4bdc-8d69-6df5282e3804",
+                "rating": 5
+            },
+            {
+                "userId": "554aa320-08a1-4a83-9522-fc2864a9da75",
+                "rating": 5
+            },
+            {
+                "userId": "b9e3dcc3-c253-41b0-b96f-545c32e13957",
                 "rating": 5
             }
         ],
@@ -1029,7 +1041,12 @@
         "description": "",
         "date": "Sun Jul 28 2019 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "mountains",
-        "ratings": [],
+        "ratings": [
+            {
+                "userId": "b9e3dcc3-c253-41b0-b96f-545c32e13957",
+                "rating": 5
+            }
+        ],
         "comments": []
     },
     {
