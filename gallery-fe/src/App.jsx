@@ -1,5 +1,6 @@
 import MainContaner from "./components/MainContainer/MainContainer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { v4 } from "uuid";
 
 import HomePage from "./pages/Home";
 import CategoryPage, { loader as photosByCategoryLoader } from "./pages/Category";
@@ -28,6 +29,17 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+
+  function generateUserToken() {
+    let userUUID = localStorage.getItem("userUUID");
+    if (!userUUID) {
+      userUUID = v4();
+      localStorage.setItem("userUUID", userUUID);
+    }
+  }
+
+  generateUserToken();
+
   return <RouterProvider router={router} />;
 }
 

@@ -85,16 +85,23 @@ app.put('/rating/:photoId', async (req, res) => {
   if (photoIndex === -1) {
     return res.status(400).json({ message: `Couldn't find photo with id ${req.params.photoId}` });
   }
-  if (photos[photoIndex].ratings.findIndex(rating => rating.userId === req.body.userId) != -1) {
-    return res.status(400).json({ message: `The vote for user ${req.body.userId} already exists` });
-  }
+
+  const userRatingIndex = photos[photoIndex].ratings.findIndex(rating => rating.userId === req.body.userId);
 
   const newRating = {
     "userId": req.body.userId,
     "rating": req.body.rating
   }
 
-  const updatedPhoto = { ...photos[photoIndex], "ratings": [...photos[photoIndex].ratings, newRating] };
+  let updatedPhoto;
+
+  if (userRatingIndex !== -1) {
+    photos[photoIndex].ratings.splice(userRatingIndex, 1, newRating);
+    updatedPhoto = { ...photos[photoIndex], "ratings":  photos[photoIndex].ratings};
+  } else {
+    updatedPhoto = { ...photos[photoIndex], "ratings": [...photos[photoIndex].ratings, newRating] };
+  }
+
   photos.splice(photoIndex, 1, updatedPhoto);
 
   await updatePhotosFile(photos);

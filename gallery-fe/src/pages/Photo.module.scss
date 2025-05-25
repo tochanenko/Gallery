@@ -21,26 +21,40 @@
     margin-bottom: 0;
   }
 
-  .rating {
-    svg {
-      height: 16px;
-      width: 16px;
-      padding-right: 2px;
+  .details {
+    display: flex;
+    align-items: center;
+    line-height: 16px;
 
-      cursor: pointer;
+    .rating {
 
-      .st0 {
-        fill: white;
+
+      svg {
+        height: 16px;
+        width: 16px;
+        padding-right: 2px;
+
+        cursor: pointer;
+
+        .st0 {
+          fill: white;
+        }
+      }
+
+      .filled .st0 {
+        fill: black;
+      }
+
+      .hovered .st0 {
+        fill: orange;
       }
     }
 
-    .hovered .st0 {
-      fill: orange;
+    .date {
+      margin-top: 0;
+      margin-left: 8px;
+      color: rgba(0, 0, 0, 0.5);
     }
-  }
 
-  .date {
-    margin-top: 0;
-    color: rgba(0, 0, 0, 0.5);
   }
 }
