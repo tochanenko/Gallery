@@ -108,6 +108,26 @@ app.put('/rating/:photoId', async (req, res) => {
   return res.status(200).json({ updatedPhoto });
 });
 
+app.put('/photo/:photoId', async (req, res) => {
+  const photos = await getPhotosFromFile();
+  const photoIndex = photos.findIndex(p => p.id === req.params.photoId);
+
+  if (photoIndex === -1) {
+    return res.status(400).json({ message: `Couldn't find photo with id ${req.params.photoId}` });
+  }
+
+  const newData = {
+    description: req.body.description,
+    title: req.body.title
+  }
+
+  const updatedPhoto = {...photos[photoIndex], ...newData};
+
+  photos.splice(photoIndex, 1, updatedPhoto);
+  await updatePhotosFile(photos);
+  return res.status(200).json({updatedPhoto});
+});
+
 // 404
 app.use((req, res, next) => {
   if (req.method === 'OPTIONS') {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useRouteLoaderData } from "react-router-dom";
+import { Form, useRouteLoaderData } from "react-router-dom";
 import { API_URL, PHOTO_URL } from "../utils/constants";
 
 import classes from "./Photo.module.scss";
@@ -54,6 +54,26 @@ export default function PhotoPage() {
     }
   }
 
+  async function handleUpdatePhotoDetails(formData) {
+    const title = formData.get('title');
+    const description = formData.get('description');
+
+    const response = await fetch(`${API_URL}/photo/${photo.id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ title, description }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Response(JSON.stringify({ message: 'Could not update photo details' }), { status: 500 });
+    } else {
+      console.log("Photo details updated!");
+      setPhoto(prevPhoto => ({ ...prevPhoto, title, description }));
+    }
+  }
+
   if (!photo) {
     return <p>Loading...</p>;
   }
@@ -70,6 +90,13 @@ export default function PhotoPage() {
           <Rating ratings={photo.ratings} handleRating={handleRating} />
           <span className={classes.date}>{formatDate(photo.date)}</span>
         </div>
+        <form action={handleUpdatePhotoDetails}>
+          <label htmlFor="title">Title</label><br/>
+          <input id="title" name="title" defaultValue={photo.title || ''} /><br/>
+          <label htmlFor="description">Description</label><br/>
+          <textarea id="description" name="description" defaultValue={photo.description || ''} cols="128" /><br/>
+          <button type="submit">Submit</button>
+        </form>
         <p>{photo.description}</p>
       </div>
     </div>
