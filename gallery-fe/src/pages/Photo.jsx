@@ -85,19 +85,19 @@ export default function PhotoPage() {
 
     <div className="container">
       <div className={classes.photo_info}>
-        <h2 className={classes.title}>{photo.title}</h2>
+        <h2 className={classes.title}>{photo.title || 'Single photo worth 1000 words'}</h2>
         <div className={classes.details}>
           <Rating ratings={photo.ratings} handleRating={handleRating} />
-          <span className={classes.date}>{formatDate(photo.date)}</span>
+          <span className={classes.date}> // {formatDate(photo.date)}</span>
         </div>
-        <form action={handleUpdatePhotoDetails}>
+        {false ? <form action={handleUpdatePhotoDetails}>
           <label htmlFor="title">Title</label><br/>
           <input id="title" name="title" defaultValue={photo.title || ''} /><br/>
           <label htmlFor="description">Description</label><br/>
           <textarea id="description" name="description" defaultValue={photo.description || ''} cols="128" /><br/>
           <button type="submit">Submit</button>
-        </form>
-        <p>{photo.description}</p>
+        </form> : undefined}
+        <p>{photo.description || 'You don\'t need to say anything. Jut observe...'}</p>
       </div>
     </div>
   </>

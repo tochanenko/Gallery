@@ -10,6 +10,10 @@
             {
                 "userId": "99749358",
                 "rating": 5
+            },
+            {
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "rating": 4
             }
         ],
         "comments": [
@@ -125,7 +129,12 @@
         "description": "A fire salamander strikes a bold pose on a stone ledge, its glossy black skin adorned with vivid yellow markings, standing out against the lush green backdrop.",
         "date": "Sun Aug 20 2023 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "animals",
-        "ratings": [],
+        "ratings": [
+            {
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "rating": 5
+            }
+        ],
         "comments": []
     },
     {
@@ -420,9 +429,9 @@
     },
     {
         "id": "bbf36bf6-971e-45fa-87ff-47248759583b",
-        "title": "",
+        "title": "Like Butter",
         "url": "/city/20250205_165833.jpg",
-        "description": "",
+        "description": "A blazing column of sunset light slices through the clouds like a blade, with Kyiv’s TV tower standing at its center - cutting the sky in half with radiant precision.",
         "date": "Wed Feb 05 2025 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -430,9 +439,9 @@
     },
     {
         "id": "c4d7726d-a3c2-4c5e-b17b-9d75b4ea8eea",
-        "title": "",
+        "title": "Empty Walks",
         "url": "/city/20220420_181210.jpg",
-        "description": "",
+        "description": "Pedestrian Bridge in Kyiv, marked by anti-tank obstacles and emptiness, captures the tense silence and quiet resilience of the city during the first months of the war. The symmetry and stark colors give it a haunting yet powerful atmosphere - both a path and a pause in time.",
         "date": "Wed Apr 20 2022 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -440,9 +449,9 @@
     },
     {
         "id": "26af9ea4-3177-4458-9846-988fcc88553e",
-        "title": "",
+        "title": "Frozen Triangle",
         "url": "/city/20240112_153518.jpg",
-        "description": "",
+        "description": "A hand in a winter glove holds a jagged shard of ice against a clear blue sky, capturing a fleeting fragment of the frozen Dnipro River in delicate morning light.",
         "date": "Fri Jan 12 2024 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -450,9 +459,9 @@
     },
     {
         "id": "3afcc318-14d0-4ae5-957a-d326113b34ec",
-        "title": "",
+        "title": "Kyiv Glacier",
         "url": "/city/20250308_135206.jpg",
-        "description": "",
+        "description": "A crystalline shard of river ice rests on sunlit rocks, overlooking the still, reflective waters of the Dnipro under a serene spring sky.",
         "date": "Sat Mar 08 2025 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -460,9 +469,9 @@
     },
     {
         "id": "b508e4f2-5ab4-4a88-8e36-d70038a7ed93",
-        "title": "",
+        "title": "Evening Stroll",
         "url": "/city/20220630_212732.jpg",
-        "description": "",
+        "description": "A delicate swirl of sunset clouds stretches over the Dnipro River, casting a golden-pink reflection on the water as Kyiv begins to glow with evening lights.",
         "date": "Thu Jun 30 2022 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -470,9 +479,9 @@
     },
     {
         "id": "28c7526b-85ea-42c0-b66c-e16744e599bc",
-        "title": "",
+        "title": "Crunchy",
         "url": "/city/20240117_141318.jpg",
-        "description": "",
+        "description": "A close-up of a frozen surface reveals a mesmerizing lattice of interwoven ice crystals, capturing the raw geometry of winter's delicate design.",
         "date": "Wed Jan 17 2024 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -480,9 +489,9 @@
     },
     {
         "id": "2b122b23-7a4d-4ecc-ac49-a67d3d1eb242",
-        "title": "",
+        "title": "What's Showin'?",
         "url": "/city/20250406_184506.jpg",
-        "description": "",
+        "description": "A pair of elegant opera glasses rests on plush red velvet, capturing the anticipation and timeless charm of a night at the theatre.",
         "date": "Sun Apr 06 2025 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -490,9 +499,9 @@
     },
     {
         "id": "b5af4f2a-9324-4ac1-9c4e-c7c6ec87f127",
-        "title": "",
+        "title": "Bee Tower",
         "url": "/city/20220723_165845.jpg",
-        "description": "",
+        "description": "A towering chimney painted in bold yellow and black stripes stretches into the vivid blue sky, creating a striking contrast and a sense of infinite ascent.",
         "date": "Sat Jul 23 2022 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -500,9 +509,9 @@
     },
     {
         "id": "fe7ce44a-de82-4668-94f9-4fcf81b65821",
-        "title": "",
+        "title": "Melting Sky",
         "url": "/city/20240227_172858.jpg",
-        "description": "",
+        "description": "A colossal sun sinks behind the silhouette of the city skyline, casting a fiery glow that blurs the line between day and night.",
         "date": "Tue Feb 27 2024 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -510,9 +519,9 @@
     },
     {
         "id": "0e2edc6e-e7e6-49d8-b004-979e308eb289",
-        "title": "",
+        "title": "Wanna cup of tea?",
         "url": "/city/20250506_170202.jpg",
-        "description": "",
+        "description": "A handmade Venom sculpture forged from metal scrap leans forward menacingly - until offered a thermos by me, as if inviting him for tea.",
         "date": "Tue May 06 2025 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -520,9 +529,9 @@
     },
     {
         "id": "a1948037-b83f-4a27-95c9-262e8a2d8448",
-        "title": "",
+        "title": "Brave Bridge",
         "url": "/city/20221015_175333.jpg",
-        "description": "",
+        "description": "The pedestrian bridge stands firm against the pale evening sky, bearing the dark scars of a missile strike - silent testimony to resilience amid destruction.",
         "date": "Sat Oct 15 2022 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -530,9 +539,9 @@
     },
     {
         "id": "7e38d506-93fd-4fae-90d3-8aba5f2eda1d",
-        "title": "",
+        "title": "Chestnut Paradise",
         "url": "/city/20240507_193715.jpg",
-        "description": "",
+        "description": "A peaceful park walkway framed by blooming chestnut trees and evergreens invites quiet strolls under a soft spring sky.",
         "date": "Tue May 07 2024 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -540,9 +549,9 @@
     },
     {
         "id": "7642e643-053a-45f4-b65b-3a5b3816ffde",
-        "title": "",
+        "title": "I am... Groot?",
         "url": "/city/20250506_170637.jpg",
-        "description": "",
+        "description": "A life-sized sculpture of Groot made from intricately arranged metal links stands in a forested park, humorously holding a bright orange thermos.",
         "date": "Tue May 06 2025 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -550,9 +559,9 @@
     },
     {
         "id": "aba5bc2b-e51b-4c88-ad15-2c1b857f9150",
-        "title": "",
+        "title": "Leafwalkway",
         "url": "/city/20221029_164454.jpg",
-        "description": "",
+        "description": "A single autumn leaf is held upright, perfectly aligned with a quiet park path, drawing focus to nature’s delicate symmetry amidst the fading colors of fall.",
         "date": "Sat Oct 29 2022 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
         "ratings": [],
@@ -576,7 +585,7 @@
             },
             {
                 "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
-                "rating": 3
+                "rating": 5
             },
             {
                 "userId": "fe762d1f-5f23-45ce-b335-021875937fa5",

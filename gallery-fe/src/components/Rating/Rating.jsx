@@ -3,6 +3,7 @@ import classes from "./Rating.module.scss";
 
 export default function Rating({ ratings, photoId, handleRating }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const rating = calculateRating(ratings);
 
   function calculateRating(ratings) {
     return ratings.reduce((acc, curr) => acc + curr.rating, 0) / ratings.length;
@@ -26,6 +27,10 @@ export default function Rating({ ratings, photoId, handleRating }) {
     return ratingIndex !== -1 ? ratings[ratingIndex].rating : 0;
   }
 
+  function formatNumber(num) {
+    return Number.isInteger(num) ? num : Number(num.toFixed(2));
+  }
+
   return <>
     {[1, 2, 3, 4, 5].map(circle => (
       <div
@@ -37,10 +42,10 @@ export default function Rating({ ratings, photoId, handleRating }) {
       >
         <div
           className={classes.rating_circle}
-          style={{ background: `linear-gradient(to right, ${getRatingForUser(ratings) >= circle ? 'rgba(255, 165, 255, 1)' : 'rgba(0, 0, 0, 1)'} ${calculatePercent(ratings, circle)}%, ${getRatingForUser(ratings) >= circle ? 'rgba(255, 165, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)'} ${calculatePercent(ratings, circle)}%` }}
+          style={{ background: `linear-gradient(to right, ${getRatingForUser(ratings) >= circle ? 'rgba(255, 165, 255, 0.7)' : 'rgba(0, 0, 0, 0.7)'} ${calculatePercent(ratings, circle)}%, ${getRatingForUser(ratings) >= circle ? 'rgba(255, 165, 255, 0.3)' : 'rgba(0, 0, 0, 0.1)'} ${calculatePercent(ratings, circle)}%` }}
         />
       </div>
     ))}
-    <span className={classes.rating_number}>{calculateRating(ratings) ? calculateRating(ratings) : ''}</span>
+    <span className={classes.rating_number}>{rating ? formatNumber(rating) : ''}</span>
   </>;
 }
