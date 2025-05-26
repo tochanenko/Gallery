@@ -4,6 +4,7 @@ import classes from './Header.module.scss';
 import instagramLogo from '../../assets/images/icons8-instagram-24.svg';
 import keyboardIconDown from '../../assets/images/keyboard_arrow_down_48dp.svg';
 import { useState } from 'react';
+import { useScroll, useTransform, motion } from 'motion/react';
 
 const CATEGORIES = [
   {
@@ -25,6 +26,10 @@ const CATEGORIES = [
 ]
 
 export default function Header() {
+  const { scrollY } = useScroll();
+
+  const headerShadow = useTransform(scrollY, [0, 100], ["rgba(100, 100, 111, 0) 0px 7px 29px", "rgba(100, 100, 111, 0.2) 0px 7px 29px"]);
+
   const [mobileHeaderVisible, setMobileHeaderVisible] = useState(false);
 
   const headerLogo = <div className={classes.logo}><Link to="/" onClick={handleResetMobileHeaderVisibility}>VPhotos_</Link></div>;
@@ -32,7 +37,7 @@ export default function Header() {
   const headerContent = <>
     <div className={classes.categories}>
       <ul>
-        {CATEGORIES.map(category => <li key={category.id}><Link to={`/category/${category.id}`} onClick={handleResetMobileHeaderVisibility}>{category.name}</Link></li>)}
+        {CATEGORIES.map(category => <Link to={`/category/${category.id}`} onClick={handleResetMobileHeaderVisibility} key={category.id}><li>{category.name}</li></Link>)}
       </ul>
     </div>
     <div className={classes.social}>
@@ -54,9 +59,12 @@ export default function Header() {
     setMobileHeaderVisible(false);
   }
 
-  return <header className={classes.header}>
-    <div className="container">
-
+  return <div className={`container ${classes.header_container}`}>
+    <motion.header
+      style={{ boxShadow: headerShadow }}
+      transition={{ duration: 0.3 }}
+      className={classes.header}
+    >
       <div className={classes.desktop_nav}>
         {headerLogo}
         {headerContent}
@@ -70,7 +78,6 @@ export default function Header() {
       <div className={`${classes.popup_header} ${!mobileHeaderVisible ? classes.gone : undefined}`}>
         {headerContent}
       </div>
-    </div>
-
-  </header>;
+    </motion.header>
+  </div >;
 }

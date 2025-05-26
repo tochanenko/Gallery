@@ -4,6 +4,7 @@ import classes from "./Rating.module.scss";
 export default function Rating({ ratings, photoId, handleRating }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const rating = calculateRating(ratings);
+  const ratingsCount = ratings.length;
 
   function calculateRating(ratings) {
     return ratings.reduce((acc, curr) => acc + curr.rating, 0) / ratings.length;
@@ -46,6 +47,6 @@ export default function Rating({ ratings, photoId, handleRating }) {
         />
       </div>
     ))}
-    <span className={classes.rating_number}>{rating ? formatNumber(rating) : ''}</span>
+    <span className={classes.rating_number}>{rating ? formatNumber(rating) : ''} ({ratingsCount} votes)</span>
   </>;
 }

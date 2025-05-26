@@ -79,22 +79,23 @@ export default function PhotoPage() {
   }
 
   return <>
-    <div className={classes.photo_block}>
-      <img src={`${PHOTO_URL}${photo.url}`} />
-    </div>
+
 
     <div className="container">
+      <div className={classes.photo_block}>
+        <img src={`${PHOTO_URL}${photo.url}`} alt={photo.title} />
+      </div>
       <div className={classes.photo_info}>
         <h2 className={classes.title}>{photo.title || 'Single photo worth 1000 words'}</h2>
         <div className={classes.details}>
-          <Rating ratings={photo.ratings} handleRating={handleRating} />
+          <Rating ratings={photo.ratings} handleRating={handleRating} photoId={photo.id} />
           <span className={classes.date}> // {formatDate(photo.date)}</span>
         </div>
         {false ? <form action={handleUpdatePhotoDetails}>
-          <label htmlFor="title">Title</label><br/>
-          <input id="title" name="title" defaultValue={photo.title || ''} /><br/>
-          <label htmlFor="description">Description</label><br/>
-          <textarea id="description" name="description" defaultValue={photo.description || ''} cols="128" /><br/>
+          <label htmlFor="title">Title</label><br />
+          <input id="title" name="title" defaultValue={photo.title || ''} /><br />
+          <label htmlFor="description">Description</label><br />
+          <textarea id="description" name="description" defaultValue={photo.description || ''} cols={128} /><br />
           <button type="submit">Submit</button>
         </form> : undefined}
         <p>{photo.description || 'You don\'t need to say anything. Jut observe...'}</p>

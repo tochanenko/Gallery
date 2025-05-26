@@ -13,9 +13,12 @@
   src: url('./assets/fonts/e-ukrainehead-light_w.ttf') format('truetype');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 body {
   margin: 0;
-  font-family: 'e-Ukraine Light';
+  font-family: 'Nunito';
+  padding-top: 120px;
 }
 
 .container {
@@ -27,10 +30,4 @@ body {
   box-sizing: border-box;
 
   padding: 16px;
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    padding-top: 80px;
-  }
 }
