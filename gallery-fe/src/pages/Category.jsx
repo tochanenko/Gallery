@@ -4,12 +4,10 @@ import PhotoGrid from "../components/PhotoGrid/PhotoGrid";
 import { API_URL } from "../utils/constants";
 
 export default function CategoryPage() {
-  const params = useParams();
   const { photos } = useRouteLoaderData('category-photos');
 
   return <>
     <div className="container">
-      <h1>"{params.categoryName}" Page</h1>
       <Suspense fallback={<p>Loading...</p>}>
         <Await resolve={photos}>
           {(resolvedPhotos) => <PhotoGrid photos={resolvedPhotos} />}

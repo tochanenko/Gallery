@@ -98,7 +98,7 @@ export default function PhotoPage() {
           <textarea id="description" name="description" defaultValue={photo.description || ''} cols={128} /><br />
           <button type="submit">Submit</button>
         </form> : undefined}
-        <p>{photo.description || 'You don\'t need to say anything. Jut observe...'}</p>
+        <p>{photo.description || 'You don\'t need to say anything. Just observe...'}</p>
       </div>
     </div>
   </>
