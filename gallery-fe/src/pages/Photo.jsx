@@ -6,7 +6,7 @@ import classes from "./Photo.module.scss";
 import Rating from "../components/Rating/Rating";
 import Comment from "../components/Comment/Comment";
 
-import { formatDate } from "../utils";
+import { formatDate } from "../utils/utils";
 
 export default function PhotoPage() {
   const [photo, setPhoto] = useState(null);

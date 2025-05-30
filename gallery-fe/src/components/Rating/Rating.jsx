@@ -15,7 +15,7 @@ export default function Rating({ ratings, photoId, handleRating }) {
     const diff = circle - rating;
     if (diff <= 0) {
       return 100;
-    } else if (diff > 1) {
+    } else if (!diff || diff > 1) {
       return 0;
     } else {
       return 100 - diff * 100;

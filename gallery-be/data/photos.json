@@ -275,7 +275,12 @@
         "description": "A peaceful summer evening settles over Muromets Park, where wildflowers sway in the breeze beneath a glowing sky painted with soft pastels and drifting clouds.",
         "date": "Sat Jul 01 2023 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
-        "ratings": [],
+        "ratings": [
+            {
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "rating": 5
+            }
+        ],
         "comments": []
     },
     {

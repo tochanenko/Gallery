@@ -3,30 +3,13 @@ import classes from './Header.module.scss';
 
 import instagramLogo from '../../assets/images/icons8-instagram-24.svg';
 import keyboardIconDown from '../../assets/images/keyboard_arrow_down_48dp.svg';
-import { useState } from 'react';
-import { useScroll, useTransform, motion } from 'motion/react';
+import { useRef, useState } from 'react';
+import { useScroll, useTransform, motion, useMotionValueEvent } from 'motion/react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { themeActions, DAY_THEME } from '../../store/theme.js';
 
-const CATEGORIES = [
-  {
-    name: 'Animals',
-    id: 'animals'
-  },
-  {
-    name: 'City',
-    id: 'city'
-  },
-  {
-    name: 'Mountains',
-    id: 'mountains'
-  },
-  {
-    name: 'Flowers',
-    id: 'flowers_plants'
-  },
-]
+import { CATEGORIES } from '../../utils/constants';
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -41,6 +24,18 @@ export default function Header() {
   const headerShadow = useTransform(scrollY, [0, 100], ["var(--card-shadow-flat)", "var(--card-shadow)"]);
 
   const [mobileHeaderVisible, setMobileHeaderVisible] = useState(false);
+
+  const lastScrollY = useRef(0);
+  const [hidden, setHidden] = useState(false);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > lastScrollY.current && lastScrollY.current > 100) {
+      setHidden(true);
+      setMobileHeaderVisible(false);
+    } else {
+      setHidden(false);
+    }
+    lastScrollY.current = latest;
+  });
 
   const headerLogo = <div className={classes.logo}><Link to="/" onClick={handleResetMobileHeaderVisibility}>VPhotos_</Link></div>;
 
@@ -59,7 +54,7 @@ export default function Header() {
   </>;
 
   const mobileHeader = <div className={classes.mobile_header} onClick={handleToggleMobileHeaderVisibility}>
-    <img src={keyboardIconDown} style={{ transform: `rotate(${mobileHeaderVisible ? 180 : 0}deg)` }} />
+    <motion.img src={keyboardIconDown} animate={{ transform: `rotate(${mobileHeaderVisible ? 180 : 0}deg)` }} />
   </div>;
 
   function handleToggleMobileHeaderVisibility() {
@@ -70,8 +65,14 @@ export default function Header() {
     setMobileHeaderVisible(false);
   }
 
-  return <div className={`container ${classes.header_container}`}>
+  return <motion.div
+    className={`container ${classes.header_container}`}
+    animate={{ y: hidden ? '-100%' : '0' }}
+    transition={{ duration: 0.3 }}
+    style={{ x: '-50%' }}
+  >
     <motion.header
+      initial={{ y: 0 }}
       style={{ boxShadow: headerShadow }}
       transition={{ duration: 0.3 }}
       className={classes.header}
@@ -90,5 +91,5 @@ export default function Header() {
         {headerContent}
       </div>
     </motion.header>
-  </div >;
+  </motion.div >;
 }

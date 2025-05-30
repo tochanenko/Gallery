@@ -1,7 +1,7 @@
 import classes from "./Comment.module.scss";
 import { AvatarGenerator } from 'random-avatar-generator';
 
-import { relativeFormatDateTime } from "../../utils";
+import { relativeFormatDateTime } from "../../utils/utils";
 
 export default function Comment({ comment, ...props }) {
   const generator = new AvatarGenerator();
