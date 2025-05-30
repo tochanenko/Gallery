@@ -15,15 +15,15 @@
     width: var(--components-size);
     border-radius: 10px;
 
-    background: rgba(0, 0, 0, 0.1);
+    background: var(--circle-empty);
   }
 }
 
 .hovered .rating_circle {
-  background: orange !important;
+  background: var(--circle-user-filled) !important;
 }
 
 .rating_number {
   padding-left: 8px;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--gray);
 }

@@ -5,6 +5,7 @@ import { v4 } from "uuid";
 import HomePage from "./pages/Home";
 import CategoryPage, { loader as photosByCategoryLoader } from "./pages/Category";
 import PhotoPage, { loader as photoByIdLoader } from "./pages/Photo";
+import { useSelector } from "react-redux";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+  const theme = useSelector(state => state.theme.theme);
 
   function generateUserToken() {
     let userUUID = localStorage.getItem("userUUID");
@@ -40,7 +42,7 @@ function App() {
 
   generateUserToken();
 
-  return <RouterProvider router={router} />;
+  return <div className={`main_container ${theme}`}><RouterProvider router={router} /></div>;
 }
 
 export default App;

@@ -1,0 +1,43 @@
+.comment {
+  width: 100%;
+
+  background-color: var(--background);
+  border-radius: 32px;
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  margin-bottom: 16px;
+  padding: 16px 28px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-start;
+
+  &__avatar {
+    height: 48px;
+    width: 48px;
+  }
+
+  &__content {
+    margin-left: 8px;
+    display: inline-block;
+
+    &__text {
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__details {
+    margin: 0;
+
+    &__name {
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    &__time {
+      margin-left: 8px;
+      color: var(--gray);
+    }
+  }
+}

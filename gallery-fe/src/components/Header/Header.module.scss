@@ -12,10 +12,9 @@
   width: 100%;
   max-width: 1200px;
 
-  background-color: rgba(255, 255, 255, 0.8);
-  // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
+  background-color: var(--header-background);
   backdrop-filter: saturate(180%) blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--header-border);
 
   padding: 0 28px;
   border-radius: 32px;
@@ -27,14 +26,14 @@
 
     &:visited,
     &:link {
-      color: black;
+      color: var(--text);
     }
   }
 
   .logo {
     display: inline-block;
     font-family: 'KyivRegion';
-    color: rgb(3, 63, 3);
+    color: var(--green);
     font-size: 2rem;
     vertical-align: center;
 
@@ -59,7 +58,7 @@
       border-radius: 32px;
 
       &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: var(--header-hover);
       }
     }
   }

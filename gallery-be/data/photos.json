@@ -28,7 +28,8 @@
                 "id": "76153f10-d9a4-4c59-85d2-ffff0b214084",
                 "userId": "sdfosdf9sdaf9s8d7f9as7fs9sdf",
                 "text": "I just rememebered I don't have any suggestions",
-                "name": "PS_Master"
+                "name": "PS_Master",
+                "date": "Thu May 22 2025 00:06:16 GMT+0300 (Eastern European Summer Time)"
             }
         ]
     },
@@ -585,7 +586,7 @@
             },
             {
                 "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
-                "rating": 3
+                "rating": 4
             },
             {
                 "userId": "fe762d1f-5f23-45ce-b335-021875937fa5",
@@ -1073,7 +1074,7 @@
         "ratings": [
             {
                 "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
-                "rating": 5
+                "rating": 1
             },
             {
                 "userId": "86f684c5-1f99-4c33-bb37-b299e5db3dd6",

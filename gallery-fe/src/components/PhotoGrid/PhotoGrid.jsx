@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import classes from "./PhotoGrid.module.css";
+import classes from "./PhotoGrid.module.scss";
 import { PHOTO_URL } from '../../utils/constants';
 import { Link } from "react-router-dom";
 

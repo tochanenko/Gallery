@@ -1,0 +1,18 @@
+* {
+  transition: background-color .3s, color .3s;
+
+  /* Default Colours */
+  --black: rgb(0, 0, 0);
+  --almost-black: rgb(8, 8, 8);
+  --gray: rgb(180, 180, 180);
+  --dark-gray: rgb(32, 32, 32);
+  --white: rgb(255, 255, 255);
+  --green: #1B5E20;
+
+  /* Footer */
+  --footer-background: var(--almost-black);
+  --footer-text: var(--white);
+
+  /* Test Colour */
+  --test: pink;
+}

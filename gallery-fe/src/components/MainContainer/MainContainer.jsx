@@ -1,5 +1,5 @@
 import { Outlet, ScrollRestoration } from 'react-router-dom';
-import classes from './MainContainer.module.css';
+import classes from './MainContainer.module.scss';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 

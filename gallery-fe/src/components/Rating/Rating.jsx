@@ -43,7 +43,7 @@ export default function Rating({ ratings, photoId, handleRating }) {
       >
         <div
           className={classes.rating_circle}
-          style={{ background: `linear-gradient(to right, ${getRatingForUser(ratings) >= circle ? 'rgba(255, 165, 255, 0.7)' : 'rgba(0, 0, 0, 0.7)'} ${calculatePercent(ratings, circle)}%, ${getRatingForUser(ratings) >= circle ? 'rgba(255, 165, 255, 0.3)' : 'rgba(0, 0, 0, 0.1)'} ${calculatePercent(ratings, circle)}%` }}
+          style={{ background: `linear-gradient(to right, ${getRatingForUser(ratings) >= circle ? 'var(--circle-filled)' : 'var(--circle-average)'} ${calculatePercent(ratings, circle)}%, ${getRatingForUser(ratings) >= circle ? 'var(--circle-half-filled)' : 'var(--circle-half-average)'} ${calculatePercent(ratings, circle)}%` }}
         />
       </div>
     ))}

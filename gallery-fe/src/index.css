@@ -18,9 +18,12 @@
 body {
   margin: 0;
   font-family: 'Nunito';
-  padding-top: 120px;
+}
 
-  background-color: rgba(250, 250, 250, 1);
+.main_container {
+  padding-top: 120px;
+  background-color: var(--body-background);
+  color: var(--text);
 }
 
 .container {

@@ -5,6 +5,9 @@ import instagramLogo from '../../assets/images/icons8-instagram-24.svg';
 import keyboardIconDown from '../../assets/images/keyboard_arrow_down_48dp.svg';
 import { useState } from 'react';
 import { useScroll, useTransform, motion } from 'motion/react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { themeActions, DAY_THEME } from '../../store/theme.js';
 
 const CATEGORIES = [
   {
@@ -26,9 +29,16 @@ const CATEGORIES = [
 ]
 
 export default function Header() {
+  const dispatch = useDispatch();
+  const theme = useSelector(state => state.theme.theme);
+
+  function handleThemeChange() {
+    dispatch(themeActions.changeTheme());
+  }
+
   const { scrollY } = useScroll();
 
-  const headerShadow = useTransform(scrollY, [0, 100], ["rgba(100, 100, 111, 0) 0px 7px 29px", "rgba(100, 100, 111, 0.2) 0px 7px 29px"]);
+  const headerShadow = useTransform(scrollY, [0, 100], ["var(--card-shadow-flat)", "var(--card-shadow)"]);
 
   const [mobileHeaderVisible, setMobileHeaderVisible] = useState(false);
 
@@ -42,7 +52,8 @@ export default function Header() {
     </div>
     <div className={classes.social}>
       <ul>
-        <li><img src={instagramLogo} /></li>
+        {/* TODO Add Instagram Logo <li onClick={handleThemeChange}><img src={instagramLogo} /></li> */}
+        <li onClick={handleThemeChange}>T</li>
       </ul>
     </div>
   </>;

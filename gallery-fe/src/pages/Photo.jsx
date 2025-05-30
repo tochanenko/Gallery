@@ -4,6 +4,9 @@ import { API_URL, PHOTO_URL } from "../utils/constants";
 
 import classes from "./Photo.module.scss";
 import Rating from "../components/Rating/Rating";
+import Comment from "../components/Comment/Comment";
+
+import { formatDate } from "../utils";
 
 export default function PhotoPage() {
   const [photo, setPhoto] = useState(null);
@@ -12,15 +15,6 @@ export default function PhotoPage() {
   useEffect(() => {
     photoPromise.then(setPhoto);
   }, [photoPromise]);
-
-  function formatDate(date) {
-    const formattedDate = Date.parse(date);
-    return new Intl.DateTimeFormat('en-GB', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-    }).format(formattedDate);
-  }
 
   async function handleRating(newRating) {
     const userId = localStorage.getItem("userUUID");
@@ -35,8 +29,6 @@ export default function PhotoPage() {
       } else {
         updatedRatings = [...prev.ratings, { userId, rating: newRating }];
       }
-
-      console.log(JSON.stringify({ ...prev, ratings: updatedRatings }, null, 4));
 
       return { ...prev, ratings: updatedRatings };
     });
@@ -69,7 +61,6 @@ export default function PhotoPage() {
     if (!response.ok) {
       throw new Response(JSON.stringify({ message: 'Could not update photo details' }), { status: 500 });
     } else {
-      console.log("Photo details updated!");
       setPhoto(prevPhoto => ({ ...prevPhoto, title, description }));
     }
   }
@@ -100,6 +91,7 @@ export default function PhotoPage() {
         </form> : undefined}
         <p>{photo.description || 'You don\'t need to say anything. Just observe...'}</p>
       </div>
+      {photo.comments ? photo.comments.map(comment => <Comment key={comment.id} comment={comment} />) : undefined}
     </div>
   </>
 }
