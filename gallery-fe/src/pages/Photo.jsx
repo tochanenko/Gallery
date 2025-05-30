@@ -7,6 +7,7 @@ import Rating from "../components/Rating/Rating";
 import Comment from "../components/Comment/Comment";
 
 import { formatDate } from "../utils/utils";
+import NewComment from "../components/NewComment/NewComment";
 
 export default function PhotoPage() {
   const [photo, setPhoto] = useState(null);
@@ -92,6 +93,7 @@ export default function PhotoPage() {
         <p>{photo.description || 'You don\'t need to say anything. Just observe...'}</p>
       </div>
       {photo.comments ? photo.comments.map(comment => <Comment key={comment.id} comment={comment} />) : undefined}
+      <NewComment photo={photo} />
     </div>
   </>
 }

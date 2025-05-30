@@ -1,0 +1,28 @@
+.new_comment {
+  width: 100%;
+
+  background-color: var(--background);
+  border-radius: 32px;
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  margin-bottom: 16px;
+  margin-top: 32px;
+  padding: 16px 28px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  &__avatar {
+    height: 128px;
+    width: 128px;
+
+    margin-top: -48px;
+  }
+
+  &__details {
+
+  }
+}

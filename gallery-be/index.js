@@ -137,7 +137,7 @@ app.post('/user', async (req, res) => {
 
   const newUser = {
     id: v4(),
-    avatar: "",
+    avatar: 0,
     name: ""
   };
 

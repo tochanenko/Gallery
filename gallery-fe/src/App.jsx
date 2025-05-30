@@ -46,3 +46,11 @@ function App() {
 }
 
 export default App;
+
+// TODO Add /UI/Card component
+// TODO Make theme as a dropdown select
+// TODO Add functionality to push comments
+// TODO Add separate view for new comment on Desktop
+// TODO Move User Data to Redux Store, keep only User UUID in the local storage
+// TODO Add theme to the localStorage
+// TODO Add theme toggle that depends on the browser theme
