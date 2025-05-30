@@ -54,3 +54,5 @@ export default App;
 // TODO Move User Data to Redux Store, keep only User UUID in the local storage
 // TODO Add theme to the localStorage
 // TODO Add theme toggle that depends on the browser theme
+// TODO Rename `utils` folder to `lib`
+// TODO Move `Photo` component from `PhotosGrid` to separate file in the same folder
