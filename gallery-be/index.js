@@ -10,7 +10,6 @@ app.use(express.static('images'));
 app.use(bodyParser.json());
 
 // CORS
-
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*'); // allow all domains
   res.setHeader('Access-Control-Allow-Methods', 'GET, PUT');
@@ -48,7 +47,10 @@ app.get('/categories', async (req, res) => {
 // Get single Photo
 app.get('/photo/:photoId', async (req, res) => {
   const photos = await getPhotosFromFile();
-  const photo = photos.find(p => p.id === req.params.photoId);
+  let photo = photos.find(p => p.id === req.params.photoId);
+
+  photo = await populateCommentsWithUserData(photo);
+
   res.status(200).json({ photo });
 });
 
@@ -108,12 +110,13 @@ app.put('/rating/:photoId', async (req, res) => {
   return res.status(200).json({ updatedPhoto });
 });
 
+// Add photo details
 app.put('/photo/:photoId', async (req, res) => {
   const photos = await getPhotosFromFile();
   const photoIndex = photos.findIndex(p => p.id === req.params.photoId);
 
   if (photoIndex === -1) {
-    return res.status(400).json({ message: `Couldn't find photo with id ${req.params.photoId}` });
+    return res.status(404).json({ message: `Couldn't find photo with id ${req.params.photoId}` });
   }
 
   const newData = {
@@ -126,6 +129,41 @@ app.put('/photo/:photoId', async (req, res) => {
   photos.splice(photoIndex, 1, updatedPhoto);
   await updatePhotosFile(photos);
   return res.status(200).json({updatedPhoto});
+});
+
+// Add new user
+app.post('/user', async (req, res) => {
+  const users = await getUsersFromFile();
+
+  const newUser = {
+    id: v4(),
+    avatar: "",
+    name: ""
+  };
+
+  const updatedUsers = [...users, newUser];
+  await updateUsersFile(updatedUsers);
+  return res.status(200).json({ id: newUser.id });
+});
+
+// Update user data
+app.put('/user/:userId', async (req, res) => {
+  const users = await getUsersFromFile();
+  const userIndex = users.findIndex(u => u.id === req.params.userId);
+
+  if (userIndex === -1) {
+    return res.status(404).json({ message: `Couldn't find user with id ${req.params.userId}` });
+  }
+
+  const updatedUser = {
+    id: users[userIndex].id,
+    name: req.body.name ?? users[userIndex].name,
+    avatar: req.body.avatar ?? users[userIndex].avatar 
+  };
+
+  users.splice(userIndex, 1, updatedUser);
+  await updateUsersFile(users);
+  return res.status(200).json({ updatedUser });
 });
 
 // 404
@@ -147,4 +185,32 @@ async function getPhotosFromFile() {
 
 async function updatePhotosFile(newPhotos) {
   await fs.writeFile('./data/photos.json', JSON.stringify(newPhotos, null, 4));
+}
+
+async function getUsersFromFile() {
+  const file = await fs.readFile('./data/users.json');
+  return JSON.parse(file);
+}
+
+async function updateUsersFile(newUsers) {
+  await fs.writeFile('./data/users.json', JSON.stringify(newUsers, null, 4));
+}
+
+async function populateCommentsWithUserData(photo) {
+  const users = await getUsersFromFile();
+
+  const updatedComments = [...photo.comments];
+  photo.comments.forEach((comment, index) => {
+    const commentUserIndex = users.findIndex(u => u.id === comment.userId);
+
+    if (commentUserIndex === -1) {
+      // This should not ever happen
+      return res.status(404).json({ message: `Couldn't find user with id ${comment.userId}`});
+    }
+
+    updatedComments[index].name = users[commentUserIndex].name;
+    updatedComments[index].avatar = users[commentUserIndex].avatar;
+  });
+
+  return { ...photo, comments: updatedComments };
 }

@@ -8,7 +8,7 @@
         "category": "animals",
         "ratings": [
             {
-                "userId": "99749358",
+                "userId": "359583bb-0a34-424d-b92e-e274078824cd",
                 "rating": 5
             },
             {
@@ -18,17 +18,15 @@
         ],
         "comments": [
             {
-                "id": "lfjsdlkjflksdlksd",
-                "userId": "99749358",
+                "id": "d93ba262-8c0f-474f-9944-6e893dd738c1",
+                "userId": "359583bb-0a34-424d-b92e-e274078824cd",
                 "text": "I would like to go there!",
-                "name": "Jack2000",
                 "date": "Thu May 22 2025 18:06:16 GMT+0300 (Eastern European Summer Time)"
             },
             {
                 "id": "76153f10-d9a4-4c59-85d2-ffff0b214084",
-                "userId": "sdfosdf9sdaf9s8d7f9as7fs9sdf",
+                "userId": "ad3d29fd-c0bc-489b-9d5c-33c393ef578b",
                 "text": "I just rememebered I don't have any suggestions",
-                "name": "PS_Master",
                 "date": "Thu May 22 2025 00:06:16 GMT+0300 (Eastern European Summer Time)"
             }
         ]
@@ -619,7 +617,6 @@
                 "id": "aba5bc2b-e51b-4c88-ad15-2c1b857f9158",
                 "userId": "aba5bc2b-e51b-4c88-ad15-2c1b857f9159",
                 "text": "I love Kyiv in May!",
-                "name": "Anrii_Krutyi",
                 "date": "Thu May 22 2025 18:06:16 GMT+0300 (Eastern European Summer Time)"
             }
         ]
