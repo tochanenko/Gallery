@@ -1,0 +1,43 @@
+.dropdown {
+
+  position: relative;
+
+  &__trigger {
+
+  }
+
+  &__content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    right: 0;
+    top: 100%;
+
+    box-shadow: var(--card-shadow);
+    border: var(--card-border);
+
+    background-color: var(--dropdown-background);
+    border-radius: 16px;
+
+    padding: 8px 0;
+    min-width: 128px;
+
+    &__choise {
+      padding: 8px 12px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--dropdown-hover);
+      }
+    }
+  }
+}
+
+.position_right {
+  right: 0;
+}
+
+.position_left {
+  left: 0;
+}

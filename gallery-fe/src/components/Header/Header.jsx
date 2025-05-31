@@ -1,32 +1,33 @@
-import { Link } from 'react-router-dom';
-import classes from './Header.module.scss';
-
-import instagramLogo from '../../assets/images/icons8-instagram-24.svg';
-import keyboardIconDown from '../../assets/images/keyboard_arrow_down_48dp.svg';
 import { useRef, useState } from 'react';
 import { useScroll, useTransform, motion, useMotionValueEvent } from 'motion/react';
 import { useDispatch, useSelector } from 'react-redux';
+import { MODE_AUTO, THEME_DAY, themeActions } from '../../store/theme.js';
+import { Link } from 'react-router-dom';
 
-import { themeActions, DAY_THEME } from '../../store/theme.js';
-
+import Dropdown from '../UI/Dropdown/Dropdown';
+import nightIcon from '../../assets/images/night_mode_24dp.svg';
+import dayIcon from '../../assets/images/day_mode_24dp.svg';
+import autoIcon from '../../assets/images/automatic_mode_24dp.svg';
+import keyboardIconDown from '../../assets/images/keyboard_arrow_down_48dp.svg';
+import classes from './Header.module.scss';
 import { CATEGORIES } from '../../lib/constants';
 
 export default function Header() {
-  const dispatch = useDispatch();
-  const theme = useSelector(state => state.theme.theme);
-
-  function handleThemeChange() {
-    dispatch(themeActions.changeTheme());
-  }
-
-  const { scrollY } = useScroll();
-
-  const headerShadow = useTransform(scrollY, [0, 100], ["var(--card-shadow-flat)", "var(--card-shadow)"]);
-
+  const themeState = useSelector(state => state.theme);
+  const [hidden, setHidden] = useState(false);
   const [mobileHeaderVisible, setMobileHeaderVisible] = useState(false);
 
+  const dispatch = useDispatch();
+  const { scrollY } = useScroll();
+  const headerShadow = useTransform(scrollY, [0, 100], ["var(--card-shadow-flat)", "var(--card-shadow)"]);
   const lastScrollY = useRef(0);
-  const [hidden, setHidden] = useState(false);
+
+  const themeIcon = themeState.mode === MODE_AUTO
+    ? autoIcon
+    : themeState.theme === THEME_DAY
+      ? dayIcon
+      : nightIcon;
+
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > lastScrollY.current && lastScrollY.current > 100) {
       setHidden(true);
@@ -37,25 +38,15 @@ export default function Header() {
     lastScrollY.current = latest;
   });
 
-  const headerLogo = <div className={classes.logo}><Link to="/" onClick={handleResetMobileHeaderVisibility}>VPhotos_</Link></div>;
-
-  const headerContent = <>
-    <div className={classes.categories}>
-      <ul>
-        {CATEGORIES.map(category => <Link to={`/category/${category.id}`} onClick={handleResetMobileHeaderVisibility} key={category.id}><li>{category.name}</li></Link>)}
-      </ul>
-    </div>
-    <div className={classes.social}>
-      <ul>
-        {/* TODO Add Instagram Logo <li onClick={handleThemeChange}><img src={instagramLogo} /></li> */}
-        <li onClick={handleThemeChange}>T</li>
-      </ul>
-    </div>
-  </>;
-
-  const mobileHeader = <div className={classes.mobile_header} onClick={handleToggleMobileHeaderVisibility}>
-    <motion.img src={keyboardIconDown} animate={{ transform: `rotate(${mobileHeaderVisible ? 180 : 0}deg)` }} />
-  </div>;
+  function handleSelectTheme(newTheme) {
+    if (newTheme === "Auto") {
+      dispatch(themeActions.setAutoMode());
+    } else if (newTheme === "Night") {
+      dispatch(themeActions.setNightTheme());
+    } else if (newTheme === "Day") {
+      dispatch(themeActions.setDayTheme());
+    }
+  }
 
   function handleToggleMobileHeaderVisibility() {
     setMobileHeaderVisible(prevValue => !prevValue);
@@ -65,8 +56,42 @@ export default function Header() {
     setMobileHeaderVisible(false);
   }
 
+  const headerLogo = <div className={classes.header__logo}>
+    <Link to="/" onClick={handleResetMobileHeaderVisibility}>VPhotos_</Link>
+  </div>;
+
+  const headerContent = <>
+    <div className={classes.header__categories}>
+      <ul>
+        {CATEGORIES.map(category => <Link
+          key={category.id}
+          to={`/category/${category.id}`}
+          onClick={handleResetMobileHeaderVisibility}
+        ><li>{category.name}</li></Link>)}
+      </ul>
+    </div>
+
+    <Dropdown
+      className={classes.header__theme}
+      choises={["Day", "Night", "Auto"]}
+      handleSelect={handleSelectTheme}
+      position={mobileHeaderVisible ? 'left' : 'right'}
+    ><img src={themeIcon} alt="Theme chaning button" /></Dropdown>
+  </>;
+
+  const mobileHeader = (
+    <div
+      className={classes['header__nav--mobile__content']}
+      onClick={handleToggleMobileHeaderVisibility}>
+      <motion.img
+        src={keyboardIconDown}
+        animate={{ transform: `rotate(${mobileHeaderVisible ? 180 : 0}deg)` }}
+      />
+    </div>
+  );
+
   return <motion.div
-    className={`container ${classes.header_container}`}
+    className={`container ${classes.header}`}
     animate={{ y: hidden ? '-100%' : '0' }}
     transition={{ duration: 0.3 }}
     style={{ x: '-50%' }}
@@ -75,21 +100,22 @@ export default function Header() {
       initial={{ y: 0 }}
       style={{ boxShadow: headerShadow }}
       transition={{ duration: 0.3 }}
-      className={classes.header}
+      className={classes.header__nav}
     >
-      <div className={classes.desktop_nav}>
+      <div className={classes['header__nav--desktop']}>
         {headerLogo}
         {headerContent}
       </div>
 
-      <div className={classes.mobile_nav}>
+      <div className={classes['header__nav--mobile']}>
         {headerLogo}
         {mobileHeader}
       </div>
 
-      <div className={`${classes.popup_header} ${!mobileHeaderVisible ? classes.gone : undefined}`}>
+      <div className={`${classes['header__nav--popup']} ${!mobileHeaderVisible ? classes.gone : undefined}`}>
         {headerContent}
       </div>
     </motion.header>
+
   </motion.div >;
 }

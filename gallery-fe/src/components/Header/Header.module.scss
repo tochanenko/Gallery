@@ -1,57 +1,81 @@
-.header_container {
+.header {
   width: 100%;
   position: fixed;
-  z-index: 9999;
   top: 16px;
-
   left: 50%;
-
+  z-index: 9999;
   display: flex;
   justify-content: center;
-}
 
-.header {
-  width: 769px;
+  &__nav {
+    width: 769px;
+    padding: 0 28px;
+    border-radius: 32px;
+    box-sizing: border-box;
+    background-color: var(--header-background);
+    backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--header-border);
 
-  background-color: var(--header-background);
-  backdrop-filter: saturate(180%) blur(20px);
-  border: 1px solid var(--header-border);
+    a {
+      text-decoration: none;
 
-  padding: 0 28px;
-  border-radius: 32px;
+      &:visited,
+      &:link {
+        color: var(--text);
+      }
+    }
 
-  box-sizing: border-box;
+    &--desktop,
+    &--mobile {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  a {
-    text-decoration: none;
+    &--mobile {
+      display: none;
 
-    &:visited,
-    &:link {
-      color: var(--text);
+      &__content {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+          filter: var(--header-image-filter);
+        }
+      }
+    }
+
+    &--popup {
+      display: block;
+
+      .header__categories {
+        display: block;
+
+        ul {
+          margin: 0;
+          padding: 0;
+        }
+
+        li {
+          display: block;
+        }
+      }
     }
   }
 
-  .logo {
-    display: inline-block;
-    font-family: 'KyivRegion';
-    font-size: 2rem;
-    vertical-align: center;
-
-    padding: 18px 0 14px 0;
-  }
-
-  .categories,
-  .social {
+  &__categories {
     display: inline-block;
 
     ul {
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
 
     li {
       display: inline-block;
-      padding: 16px 16px;
+      padding: 16px;
       text-transform: uppercase;
       font-weight: 700;
       cursor: pointer;
@@ -61,24 +85,29 @@
         background-color: var(--header-hover);
       }
     }
+
+    img {
+      filter: var(--header-image-filter);
+    }
   }
-}
 
-.desktop_nav,
-.mobile_nav {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  &__logo {
+    display: inline-block;
+    font-family: 'KyivRegion';
+    font-size: 2rem;
+    padding: 18px 0 14px;
+    vertical-align: middle;
+  }
 
-.mobile_nav {
-  display: none;
+  &__theme {
+    display: inline-block;
+    padding: 16px;
+    cursor: pointer;
+    border-radius: 32px;
 
-  .mobile_header {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+    &:hover {
+      background-color: var(--header-hover);
+    }
 
     img {
       filter: var(--header-image-filter);
@@ -86,48 +115,29 @@
   }
 }
 
-.popup_header {
-  display: block;
-
-  .categories,
-  .social {
-    display: block;
-
-    ul {
-      padding: 0;
-      margin: 0;
-    }
-
-    li {
-      display: block;
-    }
-  }
-}
-
 @media screen and (max-width: 768px) {
-  .header_container {
+  .header {
     padding: 0;
     top: 0;
-  }
 
-  .header {
-    width: 100%;
-    border-radius: 0;
-    padding: 32px 32px 16px 32px;
-  }
+    &__nav {
+      width: 100%;
+      border-radius: 0;
+      padding: 32px 32px 16px;
 
-  .desktop_nav {
-    display: none;
-  }
+      &--desktop {
+        display: none;
+      }
 
-  .mobile_nav {
-    display: flex;
+      &--mobile {
+        display: flex;
+      }
+    }
   }
 }
 
 @media screen and (min-width: 769px) {
-
-  .popup_header {
+  .header__nav--popup {
     display: none;
   }
 }

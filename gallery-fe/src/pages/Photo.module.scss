@@ -1,7 +1,8 @@
 .photo_block {
   width: 100%;
   max-height: 512px;
-  background-color: var(--photo-background);
+  background-color: var(--photo-background) !important;
+  padding: 0 !important;
 
   margin-bottom: 16px;
 

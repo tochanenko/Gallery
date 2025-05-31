@@ -2,6 +2,7 @@
   /* Default Styles */
   --body-background: rgb(250, 250, 250);
   --background: rgb(255, 255, 255);
+  --background-secondary: rgb(246, 246, 246);
   --text: rgb(32, 32, 32);
 
   /* Photo */
@@ -25,4 +26,8 @@
   --circle-user-filled: orange;
   --circle-average: rgba(0, 0, 0, 0.7);
   --circle-half-average: rgba(0, 0, 0, 0.1);
+
+  /* Dropdown */
+  --dropdown-background: rgba(255, 255, 255, 1);
+  --dropdown-hover: rgba(0, 0, 0, 0.1);
 }
