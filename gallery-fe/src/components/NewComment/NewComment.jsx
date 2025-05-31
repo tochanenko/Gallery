@@ -2,6 +2,7 @@ import { useState } from "react";
 import classes from "./NewComment.module.scss";
 import { AvatarGenerator } from 'random-avatar-generator';
 import { API_URL } from "../../utils/constants";
+import Card from "../UI/Card/Card";
 
 export default function NewComment({ photo }) {
   const [userAvatar, setUserAvatar] = useState(Number(localStorage.getItem("userAvatar")));
@@ -29,7 +30,7 @@ export default function NewComment({ photo }) {
     }
   }
 
-  return <div className={classes.new_comment}>
+  return <Card className={classes.new_comment}>
     <img
       className={classes.new_comment__avatar}
       src={generator.generateRandomAvatar(userId + userAvatar)} onClick={handleUpdateAvatar}
@@ -39,5 +40,5 @@ export default function NewComment({ photo }) {
       <input name="comment" />
       <button type="submit">Send</button>
     </div>
-  </div>
+  </Card>
 }

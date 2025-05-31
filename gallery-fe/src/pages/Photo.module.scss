@@ -3,10 +3,6 @@
   max-height: 512px;
   background-color: var(--photo-background);
 
-  border-radius: 32px;
-  box-shadow: var(--card-shadow);
-  box-sizing: border-box; 
-  border: var(--card-border);
   margin-bottom: 16px;
 
   overflow: hidden;
@@ -24,13 +20,7 @@
 }
 
 .photo_info {
-  background-color: var(--background);
-  padding: 16px 28px;
   margin-bottom: 16px;
-  border-radius: 32px;
-  box-shadow: var(--card-shadow);
-  box-sizing: border-box; 
-  border: var(--card-border);
 
   .title {
     font-family: 'e-Ukraine Head Light';
