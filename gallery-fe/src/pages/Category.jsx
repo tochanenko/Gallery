@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Await, useParams, useRouteLoaderData } from "react-router-dom";
 import PhotoGrid from "../components/PhotoGrid/PhotoGrid";
-import { API_URL } from "../utils/constants";
+import { API_URL } from "../lib/constants";
 
 export default function CategoryPage() {
   const { photos } = useRouteLoaderData('category-photos');

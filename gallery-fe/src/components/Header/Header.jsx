@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { themeActions, DAY_THEME } from '../../store/theme.js';
 
-import { CATEGORIES } from '../../utils/constants';
+import { CATEGORIES } from '../../lib/constants';
 
 export default function Header() {
   const dispatch = useDispatch();

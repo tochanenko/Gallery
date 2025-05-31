@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Form, useRouteLoaderData } from "react-router-dom";
-import { API_URL, PHOTO_URL } from "../utils/constants";
+import { API_URL, PHOTO_URL } from "../lib/constants";
 
 import classes from "./Photo.module.scss";
 import Rating from "../components/Rating/Rating";
 import Comment from "../components/Comment/Comment";
 
-import { formatDate } from "../utils/utils";
+import { formatDate } from "../lib/utils";
 import NewComment from "../components/NewComment/NewComment";
 import Card from "../components/UI/Card/Card";
 

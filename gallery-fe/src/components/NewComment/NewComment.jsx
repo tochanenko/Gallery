@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./NewComment.module.scss";
 import { AvatarGenerator } from 'random-avatar-generator';
-import { API_URL } from "../../utils/constants";
+import { API_URL } from "../../lib/constants";
 import Card from "../UI/Card/Card";
 
 export default function NewComment({ photo }) {
