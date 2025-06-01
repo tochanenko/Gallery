@@ -24,4 +24,6 @@ export const CATEGORIES = [
     name: 'Flowers',
     id: 'flowers_plants'
   },
-]
+];
+
+export const LOCAL_USER_UUID = "userUUID";

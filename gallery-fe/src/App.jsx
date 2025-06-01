@@ -5,8 +5,10 @@ import { v4 } from "uuid";
 import HomePage from "./pages/Home";
 import CategoryPage, { loader as photosByCategoryLoader } from "./pages/Category";
 import PhotoPage, { loader as photoByIdLoader } from "./pages/Photo";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useBrowserTheme, useTheme } from "./lib/hooks";
+import { API_URL, LOCAL_USER_UUID } from "./lib/constants";
+import { userActions } from "./store/user";
 
 const router = createBrowserRouter([
   {
@@ -32,25 +34,36 @@ const router = createBrowserRouter([
 
 function App() {
   const theme = useTheme();
+  const dispatch = useDispatch();
 
-  function generateUserToken() {
-    let userUUID = localStorage.getItem("userUUID");
-    if (!userUUID) {
-      userUUID = v4();
-      localStorage.setItem("userUUID", userUUID);
+  async function authenticate() {
+    let userUUID = localStorage.getItem(LOCAL_USER_UUID);
+
+    const response = userUUID
+      ? await fetch(`${API_URL}/user/${userUUID}`)
+      : await fetch(`${API_URL}/user`, { method: 'POST' });
+
+    if (!response.ok) {
+      throw new Response(JSON.stringify({ message: 'Could not get user details' }), { status: 500 });
+    } else {
+      const resData = await response.json();
+      console.log(resData);
+      localStorage.setItem(LOCAL_USER_UUID, resData.user.id);
+      dispatch(userActions.updateUser(resData.user));
     }
   }
 
-  generateUserToken();
+  authenticate();
 
   return <div className={`main_container ${theme}`}><RouterProvider router={router} /></div>;
 }
 
 export default App;
 
-// TODO Make theme as a dropdown select
 // TODO Add functionality to push comments
 // TODO Add separate view for new comment on Desktop
-// TODO Move User Data to Redux Store, keep only User UUID in the local storage
 // TODO Add theme to the localStorage
 // TODO Move `Photo` component from `PhotosGrid` to separate file in the same folder
+// TODO Add big image preview
+// TODO Add Error Pages
+// TODO Add skeleton preloading animations

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Form, useRouteLoaderData } from "react-router-dom";
+import { useRouteLoaderData } from "react-router-dom";
 import { API_URL, PHOTO_URL } from "../lib/constants";
 
 import classes from "./Photo.module.scss";
@@ -9,17 +9,18 @@ import Comment from "../components/Comment/Comment";
 import { formatDate } from "../lib/utils";
 import NewComment from "../components/NewComment/NewComment";
 import Card from "../components/UI/Card/Card";
+import { useSelector } from "react-redux";
 
 export default function PhotoPage() {
   const [photo, setPhoto] = useState(null);
   const { photo: photoPromise } = useRouteLoaderData('photo');
+  const userId = useSelector(state => state.user.id);
 
   useEffect(() => {
     photoPromise.then(setPhoto);
   }, [photoPromise]);
 
   async function handleRating(newRating) {
-    const userId = localStorage.getItem("userUUID");
 
     setPhoto(prev => {
       const existingIndex = prev.ratings.findIndex(rating => rating.userId === userId);

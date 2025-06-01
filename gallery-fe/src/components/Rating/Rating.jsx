@@ -1,10 +1,12 @@
 import { useState } from "react";
 import classes from "./Rating.module.scss";
+import { useSelector } from "react-redux";
 
 export default function Rating({ ratings, photoId, handleRating }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const rating = calculateRating(ratings);
   const ratingsCount = ratings.length;
+  const userId = useSelector(state => state.user.id);
 
   function calculateRating(ratings) {
     return ratings.reduce((acc, curr) => acc + curr.rating, 0) / ratings.length;
@@ -23,7 +25,6 @@ export default function Rating({ ratings, photoId, handleRating }) {
   }
 
   function getRatingForUser(ratings) {
-    const userId = localStorage.getItem("userUUID");
     const ratingIndex = ratings.findIndex(rating => rating.userId === userId);
     return ratingIndex !== -1 ? ratings[ratingIndex].rating : 0;
   }

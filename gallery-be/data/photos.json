@@ -1414,7 +1414,12 @@
         "description": "",
         "date": "Tue Aug 22 2023 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "mountains",
-        "ratings": [],
+        "ratings": [
+            {
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "rating": 5
+            }
+        ],
         "comments": []
     },
     {

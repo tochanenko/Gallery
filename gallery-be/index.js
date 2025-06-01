@@ -76,7 +76,7 @@ app.put('/comment/:photoId', async (req, res) => {
 
   await updatePhotosFile(photos);
 
-  res.status(200).json({ updatedPhoto });
+  res.status(200).json({ photo: updatedPhoto });
 });
 
 // Add new rating
@@ -99,7 +99,7 @@ app.put('/rating/:photoId', async (req, res) => {
 
   if (userRatingIndex !== -1) {
     photos[photoIndex].ratings.splice(userRatingIndex, 1, newRating);
-    updatedPhoto = { ...photos[photoIndex], "ratings":  photos[photoIndex].ratings};
+    updatedPhoto = { ...photos[photoIndex], "ratings": photos[photoIndex].ratings };
   } else {
     updatedPhoto = { ...photos[photoIndex], "ratings": [...photos[photoIndex].ratings, newRating] };
   }
@@ -107,7 +107,7 @@ app.put('/rating/:photoId', async (req, res) => {
   photos.splice(photoIndex, 1, updatedPhoto);
 
   await updatePhotosFile(photos);
-  return res.status(200).json({ updatedPhoto });
+  return res.status(200).json({ photo: updatedPhoto });
 });
 
 // Add photo details
@@ -124,11 +124,11 @@ app.put('/photo/:photoId', async (req, res) => {
     title: req.body.title
   }
 
-  const updatedPhoto = {...photos[photoIndex], ...newData};
+  const updatedPhoto = { ...photos[photoIndex], ...newData };
 
   photos.splice(photoIndex, 1, updatedPhoto);
   await updatePhotosFile(photos);
-  return res.status(200).json({updatedPhoto});
+  return res.status(200).json({ photo: updatedPhoto });
 });
 
 // Add new user
@@ -143,7 +143,7 @@ app.post('/user', async (req, res) => {
 
   const updatedUsers = [...users, newUser];
   await updateUsersFile(updatedUsers);
-  return res.status(200).json({ id: newUser.id });
+  return res.status(200).json({ user: newUser });
 });
 
 // Update user data
@@ -158,12 +158,34 @@ app.put('/user/:userId', async (req, res) => {
   const updatedUser = {
     id: users[userIndex].id,
     name: req.body.name ?? users[userIndex].name,
-    avatar: req.body.avatar ?? users[userIndex].avatar 
+    avatar: req.body.avatar ?? users[userIndex].avatar
   };
 
   users.splice(userIndex, 1, updatedUser);
   await updateUsersFile(users);
-  return res.status(200).json({ updatedUser });
+  return res.status(200).json({ user: updatedUser });
+});
+
+// Get User Data
+app.get('/user/:userId', async (req, res) => {
+  const users = await getUsersFromFile();
+  const userIndex = users.findIndex(u => u.id === req.params.userId);
+
+  let selectedUser = {
+    id: req.params.userId,
+    avatar: 0,
+    name: ""
+  }
+
+  if (userIndex === -1) {
+    selectedUser.id = v4();
+    const updatedUsers = [...users, selectedUser];
+    await updateUsersFile(updatedUsers);
+  } else {
+    selectedUser = users[userIndex];
+  }
+
+  return res.status(200).json({ user: selectedUser })
 });
 
 // 404
@@ -205,7 +227,7 @@ async function populateCommentsWithUserData(photo) {
 
     if (commentUserIndex === -1) {
       // This should not ever happen
-      return res.status(404).json({ message: `Couldn't find user with id ${comment.userId}`});
+      return res.status(404).json({ message: `Couldn't find user with id ${comment.userId}` });
     }
 
     updatedComments[index].name = users[commentUserIndex].name;

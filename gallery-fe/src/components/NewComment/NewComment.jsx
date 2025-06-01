@@ -1,20 +1,22 @@
-import { useState } from "react";
 import classes from "./NewComment.module.scss";
 import { AvatarGenerator } from 'random-avatar-generator';
 import { API_URL } from "../../lib/constants";
 import Card from "../UI/Card/Card";
+import { useDispatch, useSelector } from "react-redux";
+import { userActions } from "../../store/user";
 
 export default function NewComment({ photo }) {
-  const [userAvatar, setUserAvatar] = useState(Number(localStorage.getItem("userAvatar")));
-
   const generator = new AvatarGenerator();
+  const dispatch = useDispatch();
 
-  const userId = localStorage.getItem("userUUID");
+  const userState = useSelector(state => state.user);
 
   async function handleUpdateAvatar() {
-    const nextAvatar = userAvatar + 1;
+    const nextAvatar = userState.avatar + 1;
 
-    const response = await fetch(`${API_URL}/user/${userId}`, {
+    console.log(userState);
+
+    const response = await fetch(`${API_URL}/user/${userState.id}`, {
       method: 'PUT',
       body: JSON.stringify({ avatar: nextAvatar }),
       headers: {
@@ -25,15 +27,14 @@ export default function NewComment({ photo }) {
     if (!response.ok) {
       throw new Response(JSON.stringify({ message: 'Could not update user' }), { status: 500 });
     } else {
-      localStorage.setItem("userAvatar", nextAvatar.toString());
-      setUserAvatar(nextAvatar);
+      dispatch(userActions.updateUser({ avatar: nextAvatar }))
     }
   }
 
   return <Card className={classes.new_comment}>
     <img
       className={classes.new_comment__avatar}
-      src={generator.generateRandomAvatar(userId + userAvatar)} onClick={handleUpdateAvatar}
+      src={generator.generateRandomAvatar(userState.id + userState.avatar)} onClick={handleUpdateAvatar}
     />
     <div className={classes.new_comment__details}>
       <input name="user_name" />

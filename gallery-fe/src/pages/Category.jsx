@@ -21,7 +21,7 @@ async function loadPhotosByCategory(categoryName) {
   const response = await fetch(`${API_URL}/photos/${categoryName}`);
 
   if (!response.ok) {
-    throw new Response(JSON.stringify({ message: 'Cound not fetch photos' }, { status: 500 }));
+    throw new Response(JSON.stringify({ message: 'Cound not fetch photos' }), { status: 500 });
   } else {
     const resData = await response.json();
     return resData.photos;
