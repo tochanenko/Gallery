@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
 import classes from "./PhotoGrid.module.scss";
 import { PHOTO_URL } from '../../lib/constants';
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 
 export default function PhotoGrid({ photos }) {
   return <>
@@ -14,22 +15,37 @@ export default function PhotoGrid({ photos }) {
 }
 
 function Photo({ photo }) {
-  const [loading, setLoading] = useState(true);
+  const [isObserved, setIsObserved] = useState(false);
+  const imgRef = useRef(null);
 
-  function handleLoad() {
-    setLoading(false);
-  }
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entity]) => {
+      if (entity.isIntersecting && !isObserved)
+        setIsObserved(true);
+    }, { threshold: [0.5] });
+
+    observer.observe(imgRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   return <>
-    <div className={classes.photo}>
+    <motion.div
+      className={classes.photo}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={isObserved ? { opacity: 1, scale: 1 } : false}
+      transition={{ delay: 0, duration: 0.3, ease: 'easeOut' }}
+      ref={imgRef}
+    >
       <Link to={`/photo/${photo.id}`}>
         <img
-          className={loading ? classes.blur : undefined}
           src={`${PHOTO_URL}${photo.url}`}
           alt={photo.title}
-          onLoad={handleLoad}
         />
+        <div className={classes.photo__details}>
+          <span>{photo.title !== "" ? photo.title : 'Single photo worth 1000 words'}</span>
+        </div>
       </Link>
-    </div>
+    </motion.div>
   </>;
 }

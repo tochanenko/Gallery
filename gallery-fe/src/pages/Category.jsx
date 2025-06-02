@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { Await, useParams, useRouteLoaderData } from "react-router-dom";
+import { Await, useRouteLoaderData } from "react-router-dom";
 import PhotoGrid from "../components/PhotoGrid/PhotoGrid";
 import { API_URL } from "../lib/constants";
 

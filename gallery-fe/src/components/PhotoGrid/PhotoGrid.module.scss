@@ -15,8 +15,36 @@
   padding-top: 19%;
   position: relative;
   overflow: hidden;
+  box-shadow: none;
 
-  background-color: var(--almost-black);
+  transition: scale .3s, box-shadow .3s;
+
+  &:hover {
+    scale: 1.05;
+    box-shadow: var(--card-shadow);
+
+    .photo__details {
+      opacity: 1;
+    }
+  }
+
+  &__details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    padding: 16px;
+
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.75);
+
+    color: white;
+    font-family: 'e-Ukraine Head Light';
+
+    opacity: 0;
+    transition: opacity .3s;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -79,10 +107,4 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  transition: filter .3s;
-}
-
-.blur {
-  filter: blur(1.5rem);
 }

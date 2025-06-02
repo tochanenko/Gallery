@@ -1,12 +1,11 @@
 import MainContaner from "./components/MainContainer/MainContainer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { v4 } from "uuid";
 
 import HomePage from "./pages/Home";
 import CategoryPage, { loader as photosByCategoryLoader } from "./pages/Category";
 import PhotoPage, { loader as photoByIdLoader } from "./pages/Photo";
-import { useDispatch, useSelector } from "react-redux";
-import { useBrowserTheme, useTheme } from "./lib/hooks";
+import { useDispatch } from "react-redux";
+import { useTheme } from "./lib/hooks";
 import { API_URL, LOCAL_USER_UUID } from "./lib/constants";
 import { userActions } from "./store/user";
 
