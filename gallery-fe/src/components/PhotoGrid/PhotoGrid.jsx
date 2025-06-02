@@ -22,7 +22,7 @@ function Photo({ photo }) {
     const observer = new IntersectionObserver(([entity]) => {
       if (entity.isIntersecting && !isObserved)
         setIsObserved(true);
-    }, { threshold: [0.5] });
+    }, { threshold: [0.25] });
 
     observer.observe(imgRef.current);
 
