@@ -10,11 +10,14 @@ import { formatDate } from "../lib/utils";
 import NewComment from "../components/NewComment/NewComment";
 import Card from "../components/UI/Card/Card";
 import { useSelector } from "react-redux";
+import PhotoPreview from "../components/PhotoPreview/PhotoPreview";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function PhotoPage() {
   const [photo, setPhoto] = useState(null);
   const { photo: photoPromise } = useRouteLoaderData('photo');
   const userId = useSelector(state => state.user.id);
+  const [photoPreview, setPhotoPreview] = useState(false);
 
   useEffect(() => {
     photoPromise.then(setPhoto);
@@ -76,11 +79,17 @@ export default function PhotoPage() {
     <div className="container">
 
       <Card className={classes.photo_block}>
-        <img src={`${PHOTO_URL}${photo.url}`} alt={photo.title} />
+        <PhotoPreview visible={photoPreview} photo={photo} onClose={() => setPhotoPreview(false)} />
+        <motion.img
+          src={`${PHOTO_URL}${photo.url}`}
+          alt={photo.title}
+          onClick={() => setPhotoPreview(true)}
+          layoutId={`photo-${photo.id}`}
+        />
       </Card>
 
       <Card className={classes.photo_info}>
-        
+
         <h2 className={classes.title}>{photo.title || 'Single photo worth 1000 words'}</h2>
         <div className={classes.details}>
           <Rating ratings={photo.ratings} handleRating={handleRating} photoId={photo.id} />

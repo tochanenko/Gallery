@@ -64,6 +64,5 @@ export default App;
 // TODO Add separate view for new comment on Desktop
 // TODO Add theme to the localStorage
 // TODO Move `Photo` component from `PhotosGrid` to separate file in the same folder
-// TODO Add big image preview
 // TODO Add Error Pages
 // TODO Add skeleton preloading animations

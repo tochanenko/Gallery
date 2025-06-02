@@ -8,7 +8,7 @@ export const MODE_USER = "mode_user";
 
 const initialThemeState = {
   theme: THEME_NIGHT,
-  mode: MODE_USER
+  mode: MODE_AUTO
 };
 
 const themeSlice = createSlice({
