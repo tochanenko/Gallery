@@ -8,7 +8,7 @@ import autoIcon from '../../assets/images/automatic_mode_24dp.svg';
 import { CATEGORIES } from "../../lib/constants";
 
 import classes from "./Header.module.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { HeaderContext } from "../../store/header-context";
 
@@ -36,11 +36,13 @@ export default function HeaderContent() {
   return <>
     <div className={classes.header__categories}>
       <ul>
-        {CATEGORIES.map(category => <Link
+        {CATEGORIES.map(category => <NavLink
           key={category.id}
           to={`/category/${category.id}`}
           onClick={handleHideMobile}
-        ><li>{category.name}</li></Link>)}
+          className={({ isActive }) => isActive ? classes.active : undefined}
+          end
+        ><li>{category.name}</li></NavLink>)}
       </ul>
     </div>
 

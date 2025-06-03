@@ -103,7 +103,12 @@
         "description": "A surreal winter gathering unfolds on the icy shore, where swans and ducks float serenely while three regal penguins stand in formation, as if attending a frosty avian summit.",
         "date": "Mon Sep 16 2024 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "animals",
-        "ratings": [],
+        "ratings": [
+            {
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "rating": 5
+            }
+        ],
         "comments": []
     },
     {

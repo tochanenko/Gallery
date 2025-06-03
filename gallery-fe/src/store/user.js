@@ -1,10 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { AvatarGenerator } from 'random-avatar-generator';
 
 const initialUserState = {
   id: "",
   avatar: 0,
-  name: ""
+  name: "",
+  avatarUrl: ""
 };
+
+const generator = new AvatarGenerator();
 
 const userSlice = createSlice({
   name: 'user',
@@ -14,6 +18,7 @@ const userSlice = createSlice({
       state.id = action.payload.id ?? state.id;
       state.avatar = action.payload.avatar ?? state.avatar;
       state.name = action.payload.name ?? state.name;
+      state.avatarUrl = generator.generateRandomAvatar(state.id + state.avatar)
     }
   }
 });

@@ -34,7 +34,7 @@ export default function NewComment({ photo }) {
   return <Card className={classes.new_comment}>
     <img
       className={classes.new_comment__avatar}
-      src={generator.generateRandomAvatar(userState.id + userState.avatar)} onClick={handleUpdateAvatar}
+      src={userState.avatarUrl} onClick={handleUpdateAvatar}
     />
     <div className={classes.new_comment__details}>
       <input name="user_name" />

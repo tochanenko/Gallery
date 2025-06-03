@@ -145,3 +145,7 @@
 .gone {
   display: none !important;
 }
+
+.active li {
+  background-color: var(--header-hover);
+}
