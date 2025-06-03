@@ -37,4 +37,8 @@
   /* Skeleton */
   --skeleton-background: rgb(230, 230, 230);
   --skeleton-background-tinted: rgb(240, 240, 240);
+
+  /* Photo Skeleton */
+  --photo-skeleton-background: var(--almost-black);
+  --photo-skeleton-background-tinted: rgb(32, 32, 32);
 }

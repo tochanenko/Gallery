@@ -4,6 +4,7 @@ import { API_URL } from "../../lib/constants";
 import Card from "../UI/Card/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../../store/user";
+import Drawable from "../UI/Drawable/Drawable";
 
 export default function NewComment({ photo }) {
   const generator = new AvatarGenerator();
@@ -32,9 +33,11 @@ export default function NewComment({ photo }) {
   }
 
   return <Card className={classes.new_comment}>
-    <img
+    <Drawable
       className={classes.new_comment__avatar}
       src={userState.avatarUrl} onClick={handleUpdateAvatar}
+      alt="User Avatar"
+      predictedDims={{ height: "128px", width: "128px" }}
     />
     <div className={classes.new_comment__details}>
       <input name="user_name" />
