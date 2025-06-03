@@ -73,8 +73,26 @@
         "description": "Bathed in golden sunlight, a tiny caterpillar curls into a perfect loop on a hand, framed by a softly blurred summer meadow.",
         "date": "Wed Aug 10 2022 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "animals",
-        "ratings": [],
-        "comments": []
+        "ratings": [
+            {
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "rating": 5
+            }
+        ],
+        "comments": [
+            {
+                "id": "0d9b12a2-0001-47e0-a36e-ba91a91b4a27",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "Hahaha it looks so funny!",
+                "date": "Tue Jun 03 2025 22:23:18 GMT+0300 (Eastern European Summer Time)"
+            },
+            {
+                "id": "43ad0347-7b79-4944-ba1b-c9a31c63e20e",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": ":D",
+                "date": "Tue Jun 03 2025 22:23:59 GMT+0300 (Eastern European Summer Time)"
+            }
+        ]
     },
     {
         "id": "d120b56d-3e5d-4961-b941-2d4b20792519",
@@ -109,7 +127,44 @@
                 "rating": 5
             }
         ],
-        "comments": []
+        "comments": [
+            {
+                "id": "493eeb5a-79f6-447f-9eca-6354fe9160c1",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "This is wild",
+                "date": "Tue Jun 03 2025 19:57:33 GMT+0300 (Eastern European Summer Time)"
+            },
+            {
+                "id": "d78bfd03-b943-423e-8938-db008f0512cb",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "This is wild! Amazing",
+                "date": "Tue Jun 03 2025 20:00:34 GMT+0300 (Eastern European Summer Time)"
+            },
+            {
+                "id": "200c2f68-552b-4ea8-bb8f-df1fc09216a3",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "Another comment",
+                "date": "Tue Jun 03 2025 20:01:45 GMT+0300 (Eastern European Summer Time)"
+            },
+            {
+                "id": "db82abb9-a912-48ec-abc0-f121d66e979a",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "Another comment",
+                "date": "Tue Jun 03 2025 20:01:57 GMT+0300 (Eastern European Summer Time)"
+            },
+            {
+                "id": "14b2289c-ce3c-431a-9e9b-452235f4bc0b",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "Another comment",
+                "date": "Tue Jun 03 2025 20:02:08 GMT+0300 (Eastern European Summer Time)"
+            },
+            {
+                "id": "cd80c7eb-1ca5-49de-b32e-b90a83bfaf16",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "This is finally a nice comment!",
+                "date": "Tue Jun 03 2025 22:22:51 GMT+0300 (Eastern European Summer Time)"
+            }
+        ]
     },
     {
         "id": "01be539c-f13a-4ad4-b4c0-6240100855c1",

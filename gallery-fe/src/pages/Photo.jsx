@@ -58,6 +58,10 @@ export default function PhotoPage() {
     }
   }
 
+  function updateComments(updatedComments) {
+    setPhoto(prevState => ({ ...prevState, comments: updatedComments}));
+  }
+
   return <>
     <div className="container">
       <PhotoPreview visible={photoPreview} photo={photo} onClose={() => setPhotoPreview(false)} />
@@ -128,7 +132,7 @@ export default function PhotoPage() {
         comment={comment}
         animateAppearance
       />) : undefined}
-      <NewComment photo={photo} />
+      <NewComment photo={photo} updateComments={updateComments} />
     </div>
   </>
 }

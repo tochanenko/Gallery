@@ -12,7 +12,39 @@
     margin-top: -48px;
   }
 
-  &__details {}
+  &__details {
+    &__name {
+      width: 100%;
+      height: 48px;
+      margin: 16px 0;
+
+      font-size: 1.2rem;
+      font-weight: 600;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      Button {
+        margin-left: 8px;
+      }
+    }
+
+    &__text {
+      display: flex;
+      width: 100%;
+
+      Input {
+        flex-grow: 2;
+      }
+
+      Button {
+        flex-grow: 0;
+        margin-left: 8px;
+      }
+    }
+  }
 
   &--skeleton {
     width: 100%;
@@ -29,4 +61,6 @@
     flex-direction: column;
     align-items: center;
   }
+
+
 }

@@ -67,14 +67,15 @@ app.put('/comment/:photoId', async (req, res) => {
     "id": v4(),
     "userId": req.body.userId,
     "text": req.body.text,
-    "name": req.body.name,
     "date": req.body.date
   };
 
-  const updatedPhoto = { ...photos[photoIndex], "comments": [...photos[photoIndex].comments, newComment] };
+  let updatedPhoto = { ...photos[photoIndex], "comments": [...photos[photoIndex].comments, newComment] };
   photos.splice(photoIndex, 1, updatedPhoto);
 
   await updatePhotosFile(photos);
+
+  updatedPhoto = await populateCommentsWithUserData(updatedPhoto);
 
   res.status(200).json({ photo: updatedPhoto });
 });

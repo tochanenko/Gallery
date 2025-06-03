@@ -41,4 +41,20 @@
   /* Photo Skeleton */
   --photo-skeleton-background: rgb(48, 48, 48);
   --photo-skeleton-background-tinted: rgb(64, 64, 64);
+
+  /* Button */
+  --button-background: var(--blue);
+  --button-color: var(--blue-light);
+  --button-shadow: none;
+  --button-shadow-hover: 0 0 10px var(--blue), 0 0 10px var(--blue);
+  --button-border: 2px solid var(--blue-lighter);
+  --button-border-inline: 2px solid rgba(255, 255, 255, 0.15);
+  --button-background-inline: var(--blue-dark);
+
+  /* Input */
+  --input-background: var(--background);
+  --input-background-hover: rgba(255, 255, 255, 0.05);
+  --input-border: 2px solid rgba(255, 255, 255, 0.15);
+  --input-border-focus: 2px solid var(--blue);
+  --input-border-error: 2px solid var(--red);
 }

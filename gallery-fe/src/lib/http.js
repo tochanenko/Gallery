@@ -73,3 +73,45 @@ export async function getPhotoById(photoId) {
     errorMessage: 'Cound not fetch photo'
   }).then(res => res.photo);
 }
+
+export async function putUpdateUserAvatar({id, avatar}) {
+  return fetchWithLoading({
+    url: `${API_URL}/user/${id}`,
+    params: {
+      method: 'PUT',
+      body: JSON.stringify({ avatar }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    },
+    errorMessage: 'Could not update avatar'
+  }).then(res => res.user);
+}
+
+export async function putUpdateUserName({ id, name }) {
+  return fetchWithLoading({
+    url: `${API_URL}/user/${id}`,
+    params: {
+      method: 'PUT',
+      body: JSON.stringify({ name }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    },
+    errorMessage: 'Could not update avatar'
+  }).then(res => res.user);
+}
+
+export async function putNewComment({ photoId, userId, text, date }) {
+  return fetchWithLoading({
+    url: `${API_URL}/comment/${photoId}`,
+    params: {
+      method: 'PUT',
+      body: JSON.stringify({ userId, text, date }),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    },
+    errorMessage: 'Could not add new comment'
+  }).then(res => res.photo);
+}

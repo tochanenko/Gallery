@@ -39,7 +39,6 @@ function App() {
   const userId = useSelector(state => state.user.id);
 
   async function authenticate() {
-    console.log('Authentication in progress');
     let userUUID = localStorage.getItem(LOCAL_USER_UUID);
 
     const user = await authenticateUser(userUUID);

@@ -1,0 +1,40 @@
+input,
+textarea {
+  font-family: 'Nunito';
+  min-width: 48px;
+
+  border: none;
+
+  padding: 10px 20px;
+  border-radius: 32px;
+  outline-width: 0;
+
+  transition: border .3s, background-color .3s;
+  -webkit-transition: border .3s, background-color .3s;
+
+  background-color: var(--input-background);
+  color: var(--text);
+  border: var(--input-border);
+
+  &::placeholder {
+    color: var(--gray);
+  }
+
+  &:focus {
+    border: var(--input-border-focus);
+    background-color: var(--input-background-hover);
+  }
+
+  &:hover {
+    background-color: var(--input-background-hover);
+  }
+
+  &::after {
+    background: #F5F5F5;
+  }
+}
+
+textarea {
+  min-height: 48px;
+  overflow: visible;
+}
