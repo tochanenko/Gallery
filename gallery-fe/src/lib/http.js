@@ -1,68 +1,75 @@
+import store from "../store";
+import { progressActions } from "../store/progress";
 import { API_URL } from "./constants";
 
-export async function getPhotosByCategory(categoryName) {
-  const response = await fetch(`${API_URL}/photos/${categoryName}`);
+async function fetchWithLoading({
+  url,
+  params = {},
+  errorMessage = 'Could not fetch',
+  errorCode = 500
+}) {
+  store.dispatch(progressActions.setLoading(true));
 
-  if (!response.ok) {
-    throw new Response(JSON.stringify({ message: 'Cound not fetch photos' }), { status: 500 });
-  } else {
-    const resData = await response.json();
-    return resData.photos;
+  try {
+    const response = await fetch(url, params);
+
+    if (!response.ok) {
+      store.dispatch(progressActions.setLoading(false));
+      throw new Response(JSON.stringify({ message: errorMessage }), { status: errorCode });
+    }
+
+    return await response.json();
+  } finally {
+    store.dispatch(progressActions.setLoading(false));
   }
+}
+
+export async function getPhotosByCategory(categoryName) {
+  return fetchWithLoading({
+    url: `${API_URL}/photos/${categoryName}`,
+    errorMessage: 'Cound not fetch photos'
+  }).then(res => res.photos);
 }
 
 export async function authenticateUser(userUUID) {
-  const response = userUUID
-    ? await fetch(`${API_URL}/user/${userUUID}`)
-    : await fetch(`${API_URL}/user`, { method: 'POST' });
-
-  if (!response.ok) {
-    throw new Response(JSON.stringify({ message: 'Could not get user details' }), { status: 500 });
-  } else {
-    const resData = await response.json();
-    return resData.user;
-  }
+  return fetchWithLoading({
+    url: userUUID ? `${API_URL}/user/${userUUID}` : `${API_URL}/user`,
+    params: userUUID ? {} : { method: "POST" },
+    errorMessage: 'Could not get user details'
+  }).then(res => res.user);
 }
 
 export async function putNewRating(photoId, userId, newRating) {
-  const response = await fetch(`${API_URL}/rating/${photoId}`, {
-    method: 'PUT',
-    body: JSON.stringify({ userId, rating: newRating }),
-    headers: {
-      'Content-Type': 'application/json',
-    }
+  return fetchWithLoading({
+    url: `${API_URL}/rating/${photoId}`,
+    params: {
+      method: 'PUT',
+      body: JSON.stringify({ userId, rating: newRating }),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    },
+    errorMessage: 'Could not update rating'
   });
-
-  if (!response.ok) {
-    throw new Response(JSON.stringify({ message: 'Could not update rating' }), { status: 500 });
-  } else {
-    return await response.json();
-  }
 }
 
 export async function putPhotoDetails(photoId, title, description) {
-  const response = await fetch(`${API_URL}/photo/${photoId}`, {
-    method: 'PUT',
-    body: JSON.stringify({ title, description }),
-    headers: {
-      'Content-Type': 'application/json'
-    }
+  return fetchWithLoading({
+    url: `${API_URL}/photo/${photoId}`,
+    params: {
+      method: 'PUT',
+      body: JSON.stringify({ title, description }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    },
+    errorMessage: 'Could not update photo details'
   });
-
-  if (!response.ok) {
-    throw new Response(JSON.stringify({ message: 'Could not update photo details' }), { status: 500 });
-  } else {
-    return await response.json();
-  }
 }
 
 export async function getPhotoById(photoId) {
-  const response = await fetch(`${API_URL}/photo/${photoId}`);
-
-  if (!response.ok) {
-    throw new Response(JSON.stringify({ message: 'Cound not fetch photo' }), { status: 500 });
-  } else {
-    const resData = await response.json();
-    return resData.photo;
-  }
+  return fetchWithLoading({
+    url: `${API_URL}/photo/${photoId}`,
+    errorMessage: 'Cound not fetch photo'
+  }).then(res => res.photo);
 }

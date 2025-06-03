@@ -4,13 +4,10 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import HeaderContextProvider from '../../store/header-context';
 import PageProgress from '../UI/PageProgress/PageProgress';
-import { ProgressContextProvider } from '../../store/progress-context';
 
 export default function MainContainer() {
   return <>
-    <ProgressContextProvider>
-      <PageProgress />
-    </ProgressContextProvider>
+    <PageProgress />
     <HeaderContextProvider>
       <Header />
       <main className={classes['main-container']}>

@@ -1,9 +1,15 @@
 import { AnimatePresence, motion } from "motion/react";
 import classes from "./PageProgress.module.scss";
-import { useProgress } from "../../../store/progress-context";
+import { useDispatch, useSelector } from "react-redux";
+import { progressActions } from "../../../store/progress";
 
 export default function PageProgress() {
-  const { loading, setLoading } = useProgress();
+  const loading = useSelector(state => state.progress.loading);
+  const dispatch = useDispatch();
+
+  function setLoading(newLoading) {
+    dispatch(progressActions.setLoading(newLoading))
+  }
 
   return <>
     <AnimatePresence>
