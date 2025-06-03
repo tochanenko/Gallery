@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import PhotoPreview from "../components/PhotoPreview/PhotoPreview";
 import { motion } from "motion/react";
 import { getPhotoById, putNewRating, putPhotoDetails } from "../lib/http";
+import Skeleton from "../components/UI/Skelelton/Skeleton";
 
 export default function PhotoPage() {
   const [photo, setPhoto] = useState(null);
@@ -59,7 +60,7 @@ export default function PhotoPage() {
   }
 
   function updateComments(updatedComments) {
-    setPhoto(prevState => ({ ...prevState, comments: updatedComments}));
+    setPhoto(prevState => ({ ...prevState, comments: updatedComments }));
   }
 
   return <>
@@ -71,17 +72,10 @@ export default function PhotoPage() {
           className={classes.photo_block}
           animateAppearance
         >
-          {!photo ? <motion.div
+          {!photo ? <Skeleton
             className={classes["photo_block--skeleton"]}
-            initial={{ backgroundColor: "var(--photo-skeleton-background)" }}
-            animate={{
-              backgroundColor: ["var(--photo-skeleton-background)", "var(--photo-skeleton-background-tinted)", "var(--photo-skeleton-background)"]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
+            initialBackground="var(--photo-skeleton-background)"
+            tintedBackground="var(--photo-skeleton-background-tinted)"
           /> : <motion.img
             src={`${PHOTO_URL}${photo.url}`}
             alt={photo.title}

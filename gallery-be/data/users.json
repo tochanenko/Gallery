@@ -11,8 +11,8 @@
     },
     {
         "id": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
-        "name": "Vladyslav",
-        "avatar": 3
+        "name": "Vlad",
+        "avatar": 10
     },
     {
         "id": "aba5bc2b-e51b-4c88-ad15-2c1b857f9159",
@@ -68,5 +68,30 @@
         "id": "057040eb-33b7-4d87-b919-d761e358e3e8",
         "name": "Jefferson",
         "avatar": 5
+    },
+    {
+        "id": "29213bc2-a9e9-4a30-8aff-54a9dc873887",
+        "avatar": 0,
+        "name": ""
+    },
+    {
+        "id": "e44df8e6-c5df-4f8d-8fb0-0f15f63cb97d",
+        "avatar": 0,
+        "name": ""
+    },
+    {
+        "id": "fff62dbc-a82a-41ba-83dd-1f54917f1ba9",
+        "name": "Jeffer",
+        "avatar": 0
+    },
+    {
+        "id": "5cfb21ac-47f6-4abc-97f9-1faa6ae2831b",
+        "avatar": 0,
+        "name": ""
+    },
+    {
+        "id": "9d99555f-a795-431e-b817-2daddb702693",
+        "name": "Mary",
+        "avatar": 0
     }
 ]

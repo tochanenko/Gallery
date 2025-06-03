@@ -3,6 +3,7 @@ import { PHOTO_URL } from '../../lib/constants';
 import { Await, Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Suspense, useEffect, useRef, useState } from "react";
+import Skeleton from "../UI/Skelelton/Skeleton";
 
 export default function PhotoGrid({ photos }) {
   return <>
@@ -19,19 +20,7 @@ export default function PhotoGrid({ photos }) {
 
 function PhotoGridSkeleton() {
   return <div className={classes.photo_grid}>
-    {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(key => <motion.div
-      key={key}
-      className={classes['photo--skeleton']}
-      initial={{ backgroundColor: "var(--skeleton-background)" }}
-      animate={{
-        backgroundColor: ["var(--skeleton-background)", "var(--skeleton-background-tinted)", "var(--skeleton-background)"]
-      }}
-      transition={{
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }}
-    />)}
+    {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(key => <Skeleton key={key} className={classes['photo--skeleton']} />)}
   </div>
 }
 

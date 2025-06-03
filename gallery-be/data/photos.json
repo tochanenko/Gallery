@@ -28,6 +28,12 @@
                 "userId": "ad3d29fd-c0bc-489b-9d5c-33c393ef578b",
                 "text": "I just rememebered I don't have any suggestions",
                 "date": "Thu May 22 2025 00:06:16 GMT+0300 (Eastern European Summer Time)"
+            },
+            {
+                "id": "1a1530bf-17ac-45c5-9165-f897387c613f",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "I like this bee",
+                "date": "Tue Jun 03 2025 23:01:37 GMT+0300 (Eastern European Summer Time)"
             }
         ]
     },
@@ -1299,8 +1305,20 @@
         "description": "",
         "date": "Thu Aug 03 2023 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "mountains",
-        "ratings": [],
-        "comments": []
+        "ratings": [
+            {
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "rating": 5
+            }
+        ],
+        "comments": [
+            {
+                "id": "2e7053b8-13ff-4f6c-b114-4c77d950266e",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "I love this place",
+                "date": "Tue Jun 03 2025 23:21:55 GMT+0300 (Eastern European Summer Time)"
+            }
+        ]
     },
     {
         "id": "b5bd0517-eefb-4caf-a1f1-d125beb7ed91",
@@ -1370,7 +1388,38 @@
         "date": "Fri Aug 18 2023 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "mountains",
         "ratings": [],
-        "comments": []
+        "comments": [
+            {
+                "id": "968fd0e7-664a-4890-96a1-0d5d077a0d99",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "So deep",
+                "date": "Tue Jun 03 2025 23:22:44 GMT+0300 (Eastern European Summer Time)"
+            },
+            {
+                "id": "896dc03a-e478-43b0-8d1d-f3a2cc2f834a",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "Testing slow internet",
+                "date": "Tue Jun 03 2025 23:24:13 GMT+0300 (Eastern European Summer Time)"
+            },
+            {
+                "id": "deffafa5-b729-4707-9c90-14899b9b131e",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "Another test",
+                "date": "Tue Jun 03 2025 23:24:30 GMT+0300 (Eastern European Summer Time)"
+            },
+            {
+                "id": "d15a9209-11d5-40ee-a389-fb5d4e40de08",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "Test 3",
+                "date": "Tue Jun 03 2025 23:28:39 GMT+0300 (Eastern European Summer Time)"
+            },
+            {
+                "id": "9f20073c-810a-40b7-b42e-0dc73f0677d4",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "Test 4",
+                "date": "Tue Jun 03 2025 23:28:48 GMT+0300 (Eastern European Summer Time)"
+            }
+        ]
     },
     {
         "id": "ef565283-d061-406b-9220-d4262a27a763",
