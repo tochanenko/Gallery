@@ -27,3 +27,5 @@ export const CATEGORIES = [
 ];
 
 export const LOCAL_USER_UUID = "userUUID";
+export const LOCAL_THEME_MODE = "localThemeMode";
+export const LOCAL_THEME = "localTheme";
