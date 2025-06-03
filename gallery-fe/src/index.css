@@ -22,6 +22,9 @@ body {
 
 .main_container {
   padding-top: 120px;
+}
+
+.main_colors {
   background-color: var(--body-background);
   color: var(--text);
 }

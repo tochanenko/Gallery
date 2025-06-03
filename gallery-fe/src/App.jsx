@@ -1,7 +1,7 @@
 import MainContaner from "./components/MainContainer/MainContainer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import HomePage from "./pages/Home";
+import HomePage, { loader as randomPhotosLoader} from "./pages/Home";
 import CategoryPage, { loader as photosByCategoryLoader } from "./pages/Category";
 import PhotoPage, { loader as photoByIdLoader } from "./pages/Photo";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,7 +15,12 @@ const router = createBrowserRouter([
     path: '/',
     element: <MainContaner />,
     children: [
-      { index: true, element: <HomePage /> },
+      {
+        index: true,
+        id: 'random-photos',
+        element: <HomePage />,
+        loader: randomPhotosLoader
+      },
       {
         path: 'category/:categoryName',
         id: 'category-photos',
@@ -51,7 +56,7 @@ function App() {
     authenticate();
   }
 
-  return <div className={`main_container ${theme}`}><RouterProvider router={router} /></div>;
+  return <div className={`main_colors ${theme}`}><RouterProvider router={router} /></div>;
 }
 
 export default App;

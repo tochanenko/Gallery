@@ -5,11 +5,11 @@ import { getPhotosByCategory } from "../lib/http";
 export default function CategoryPage() {
   const { photos } = useRouteLoaderData('category-photos');
 
-  return <>
+  return <div className="main_container">
     <div className="container">
       <PhotoGrid photos={photos} />
     </div>
-  </>
+  </div>
 }
 
 export async function loader({ request, params }) {

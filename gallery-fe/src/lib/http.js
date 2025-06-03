@@ -115,3 +115,10 @@ export async function putNewComment({ photoId, userId, text, date }) {
     errorMessage: 'Could not add new comment'
   }).then(res => res.photo);
 }
+
+export async function getRandomPhotos() {
+  return fetchWithLoading({
+    url: `${API_URL}/random`,
+    errorMessage: 'Couold not fetch random photos'
+  });
+}
