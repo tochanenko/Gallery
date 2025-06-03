@@ -32,6 +32,20 @@ textarea {
   &::after {
     background: #F5F5F5;
   }
+
+  &:disabled {
+    background-color: var(--button-background-disabled);
+    border: var(--button-border-disabled);
+    color: var(--button-color-disabled);
+    box-shadow: none;
+    cursor: default;
+
+    &:hover,
+    &:active {
+      background-color: var(--button-background-disabled);
+      filter: none;
+    }
+  }
 }
 
 textarea {

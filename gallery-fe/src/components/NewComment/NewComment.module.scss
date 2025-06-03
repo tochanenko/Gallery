@@ -10,6 +10,13 @@
     width: 128px;
 
     margin-top: -48px;
+
+    cursor: pointer;
+  }
+
+  &__hint {
+    color: var(--gray);
+    margin: 8px 0;
   }
 
   &__details {

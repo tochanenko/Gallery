@@ -50,6 +50,10 @@
   --button-border: 2px solid var(--blue-lighter);
   --button-border-inline: 2px solid rgba(255, 255, 255, 0.15);
   --button-background-inline: var(--blue-dark);
+  
+  --button-background-disabled: rgb(61, 61, 61);
+  --button-border-disabled: 2px solid rgb(100, 100, 100);
+  --button-color-disabled: rgb(197, 197, 197);
 
   /* Input */
   --input-background: var(--background);

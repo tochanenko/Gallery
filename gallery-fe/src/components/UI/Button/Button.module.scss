@@ -30,9 +30,17 @@
     filter: brightness(90%);
   }
 
-  &.disabled {
+  &:disabled {
+    background-color: var(--button-background-disabled);
+    border: var(--button-border-disabled);
+    color: var(--button-color-disabled);
     box-shadow: none;
     cursor: default;
+
+    &:hover, &:active {
+      background-color: var(--button-background-disabled);
+      filter: none;
+    }
   }
 
   &--inline {

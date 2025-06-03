@@ -54,6 +54,11 @@ export default function NewComment({ photo, updateComments }) {
     commentRef.current.value = "";
   }
 
+  function handleCancelNameChange() {
+    userNameRef.current.value = userState.name;
+    setEditingUsername(false);
+  }
+
   return <Card className={classes.new_comment} animateAppearance>
     {!photo ? <motion.div
       className={classes["new_comment--skeleton"]}
@@ -73,31 +78,39 @@ export default function NewComment({ photo, updateComments }) {
         alt="User Avatar"
         predictedDims={{ height: "128px", width: "128px" }}
       />
-        {editingUsername ? <>
-          <form onSubmit={handleUpdateUsername} className={classes.new_comment__details__name}>
-            <Input
-              name="user_name"
-              id="user_name"
-              ref={userNameRef}
-              defaultValue={userState.name}
-              placeholder="Username"
-            />
-
-            <Button inline>Set</Button>
-          </form>
-        </> : <>
-          <p className={classes.new_comment__details__name}>{userState.name !== "" ? userState.name : "Please add your name"} <Button onClick={() => setEditingUsername(true)} inline={true}>Edit</Button></p>
-        </>}
-
-        <form onSubmit={handleAddComment} className={classes.new_comment__details__text}>
+      <span className={classes.new_comment__hint}>You can change your avatar by tapping on it</span>
+      {editingUsername ? <>
+        <form onSubmit={handleUpdateUsername} className={classes.new_comment__details__name}>
           <Input
-            name="comment"
-            id="comment"
-            ref={commentRef}
-            placeholder="Comment"
+            name="user_name"
+            id="user_name"
+            ref={userNameRef}
+            defaultValue={userState.name}
+            placeholder="Username"
+            required
           />
-          <Button>Send</Button>
+
+          <Button inline>Set</Button>
+          <Button inline onClick={handleCancelNameChange} type="button">Cancel</Button>
         </form>
+      </> : <>
+        <p className={classes.new_comment__details__name}>
+          {userState.name !== "" ? userState.name : "Please add your name"}
+          <Button onClick={() => setEditingUsername(true)} inline={true}>Edit</Button>
+        </p>
+      </>}
+      {userState.name === "" ? <span className={classes.new_comment__hint}>Please add your username before posting your first comment</span> : undefined }
+      <form onSubmit={handleAddComment} className={classes.new_comment__details__text}>
+        <Input
+          name="comment"
+          id="comment"
+          ref={commentRef}
+          placeholder="Comment"
+          required
+          disabled={userState.name === ""}
+        />
+        <Button disabled={userState.name === ""}>Send</Button>
+      </form>
     </div>}
   </Card>
 }
