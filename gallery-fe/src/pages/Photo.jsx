@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouteLoaderData } from "react-router-dom";
-import { API_URL, PHOTO_URL } from "../lib/constants";
+import { PHOTO_URL } from "../lib/constants";
 
 import classes from "./Photo.module.scss";
 import Rating from "../components/Rating/Rating";
@@ -11,7 +11,8 @@ import NewComment from "../components/NewComment/NewComment";
 import Card from "../components/UI/Card/Card";
 import { useSelector } from "react-redux";
 import PhotoPreview from "../components/PhotoPreview/PhotoPreview";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
+import { getPhotoById, putNewRating, putPhotoDetails } from "../lib/http";
 
 export default function PhotoPage() {
   const [photo, setPhoto] = useState(null);
@@ -24,7 +25,6 @@ export default function PhotoPage() {
   }, [photoPromise]);
 
   async function handleRating(newRating) {
-
     setPhoto(prev => {
       const existingIndex = prev.ratings.findIndex(rating => rating.userId === userId);
       let updatedRatings;
@@ -39,16 +39,10 @@ export default function PhotoPage() {
       return { ...prev, ratings: updatedRatings };
     });
 
-    const response = await fetch(`${API_URL}/rating/${photo.id}`, {
-      method: 'PUT',
-      body: JSON.stringify({ userId, rating: newRating }),
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    });
-
-    if (!response.ok) {
-      throw new Response(JSON.stringify({ message: 'Could not update rating' }), { status: 500 });
+    try {
+      await putNewRating(photo.id, userId, newRating);
+    } catch (e) {
+      console.log(e);
     }
   }
 
@@ -56,18 +50,11 @@ export default function PhotoPage() {
     const title = formData.get('title');
     const description = formData.get('description');
 
-    const response = await fetch(`${API_URL}/photo/${photo.id}`, {
-      method: 'PUT',
-      body: JSON.stringify({ title, description }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-
-    if (!response.ok) {
-      throw new Response(JSON.stringify({ message: 'Could not update photo details' }), { status: 500 });
-    } else {
+    try {
+      await putPhotoDetails(photo.id, title, description);
       setPhoto(prevPhoto => ({ ...prevPhoto, title, description }));
+    } catch (e) {
+      console.log(e);
     }
   }
 
@@ -113,21 +100,10 @@ export default function PhotoPage() {
   </>
 }
 
-async function loadPhotoById(photoId) {
-  const response = await fetch(`${API_URL}/photo/${photoId}`);
-
-  if (!response.ok) {
-    throw new Response(JSON.stringify({ message: 'Cound not fetch photo' }, { status: 500 }));
-  } else {
-    const resData = await response.json();
-    return resData.photo;
-  }
-}
-
 export async function loader({ request, params }) {
   const photoId = params.photoId;
 
   return {
-    photo: loadPhotoById(photoId)
+    photo: getPhotoById(photoId)
   }
 }

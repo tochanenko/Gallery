@@ -7,7 +7,7 @@ export function useBrowserTheme() {
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
   }
 
-  const [ isNightTheme, setIsNightTheme ] = useState(getCurrentTheme());
+  const [isNightTheme, setIsNightTheme] = useState(getCurrentTheme());
 
   function themeListener(event) {
     setIsNightTheme(event.matches);

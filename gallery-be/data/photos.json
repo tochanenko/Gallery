@@ -708,7 +708,12 @@
         "description": "",
         "date": "Thu Aug 03 2023 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "flowers_plants",
-        "ratings": [],
+        "ratings": [
+            {
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "rating": 5
+            }
+        ],
         "comments": []
     },
     {
@@ -1115,9 +1120,9 @@
     },
     {
         "id": "8f1b7820-2c4f-484b-96b3-0c504f1de350",
-        "title": "",
+        "title": "Moon hiding behind Smotrych",
         "url": "/mountains/20230803_064117.jpg",
-        "description": "",
+        "description": "Sometimes moon is too shy to walk with hikers all day long, so it has to hide from them.",
         "date": "Thu Aug 03 2023 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "mountains",
         "ratings": [],

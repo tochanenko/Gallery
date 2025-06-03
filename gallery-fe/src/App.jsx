@@ -6,8 +6,9 @@ import CategoryPage, { loader as photosByCategoryLoader } from "./pages/Category
 import PhotoPage, { loader as photoByIdLoader } from "./pages/Photo";
 import { useDispatch } from "react-redux";
 import { useTheme } from "./lib/hooks";
-import { API_URL, LOCAL_USER_UUID } from "./lib/constants";
+import { LOCAL_USER_UUID } from "./lib/constants";
 import { userActions } from "./store/user";
+import { authenticateUser } from "./lib/http";
 
 const router = createBrowserRouter([
   {
@@ -38,18 +39,10 @@ function App() {
   async function authenticate() {
     let userUUID = localStorage.getItem(LOCAL_USER_UUID);
 
-    const response = userUUID
-      ? await fetch(`${API_URL}/user/${userUUID}`)
-      : await fetch(`${API_URL}/user`, { method: 'POST' });
+    const user = await authenticateUser(userUUID);
 
-    if (!response.ok) {
-      throw new Response(JSON.stringify({ message: 'Could not get user details' }), { status: 500 });
-    } else {
-      const resData = await response.json();
-      console.log(resData);
-      localStorage.setItem(LOCAL_USER_UUID, resData.user.id);
-      dispatch(userActions.updateUser(resData.user));
-    }
+    localStorage.setItem(LOCAL_USER_UUID, user.id);
+    dispatch(userActions.updateUser(user));
   }
 
   authenticate();
@@ -58,10 +51,3 @@ function App() {
 }
 
 export default App;
-
-// TODO Add functionality to push comments
-// TODO Add separate view for new comment on Desktop
-// TODO Add theme to the localStorage
-// TODO Move `Photo` component from `PhotosGrid` to separate file in the same folder
-// TODO Add Error Pages
-// TODO Add skeleton preloading animations
