@@ -5,6 +5,7 @@ import Card from "../UI/Card/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../../store/user";
 import Drawable from "../UI/Drawable/Drawable";
+import { motion } from "motion/react";
 
 export default function NewComment({ photo }) {
   const generator = new AvatarGenerator();
@@ -32,17 +33,30 @@ export default function NewComment({ photo }) {
     }
   }
 
-  return <Card className={classes.new_comment}>
-    <Drawable
-      className={classes.new_comment__avatar}
-      src={userState.avatarUrl} onClick={handleUpdateAvatar}
-      alt="User Avatar"
-      predictedDims={{ height: "128px", width: "128px" }}
-    />
-    <div className={classes.new_comment__details}>
-      <input name="user_name" />
-      <input name="comment" />
-      <button type="submit">Send</button>
-    </div>
+  return <Card className={classes.new_comment} animateAppearance>
+    {!photo ? <motion.div
+      className={classes["new_comment--skeleton"]}
+      initial={{ backgroundColor: "var(--skeleton-background)" }}
+      animate={{
+        backgroundColor: ["var(--skeleton-background)", "var(--skeleton-background-tinted)", "var(--skeleton-background)"]
+      }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }}
+    /> : <div className={classes.block}>
+      <Drawable
+        className={classes.new_comment__avatar}
+        src={userState.avatarUrl} onClick={handleUpdateAvatar}
+        alt="User Avatar"
+        predictedDims={{ height: "128px", width: "128px" }}
+      />
+      <div className={classes.new_comment__details}>
+        <input name="user_name" />
+        <input name="comment" />
+        <button type="submit">Send</button>
+      </div>
+    </div>}
   </Card>
 }

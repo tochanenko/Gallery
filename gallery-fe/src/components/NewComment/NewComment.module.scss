@@ -1,13 +1,9 @@
 .new_comment {
   width: 100%;
+  padding: 0 !important;
 
   margin-bottom: 16px;
   margin-top: 32px;
-
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
 
   &__avatar {
     height: 128px;
@@ -16,7 +12,21 @@
     margin-top: -48px;
   }
 
-  &__details {
+  &__details {}
 
+  &--skeleton {
+    width: 100%;
+    height: 165px;
+
+    border-radius: 32px;
+  }
+
+  .block {
+    padding: 16px 28px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 }

@@ -12,6 +12,9 @@ export default function Drawable({ src, alt, predictedDims = { height: "16px", w
       alt={alt}
       onLoad={() => setImageLoaded(true)}
       className={className}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: imageLoaded ? 1 : 0 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
       {...props}
     />
     {!imageLoaded && <motion.div
@@ -28,5 +31,4 @@ export default function Drawable({ src, alt, predictedDims = { height: "16px", w
       }}
     />}
   </>
-
 }
