@@ -24,7 +24,7 @@ export default function PageProgress() {
           transition={{
             duration: 2,
             repeat: Infinity,
-            ease: "easeOut",
+            ease: "easeInOut",
             times: [0, 0.49, 0.5, 1],
           }}
         />

@@ -19,6 +19,13 @@
 
   transition: scale .3s, box-shadow .3s;
 
+  &--skeleton {
+    width: 19%;
+    padding-top: 19%;
+
+    background-color: var(--skeleton-background);
+  }
+
   &:hover {
     scale: 1.05;
     box-shadow: var(--card-shadow);
@@ -57,6 +64,13 @@
     padding-top: 32%;
 
     margin-bottom: var(--gap-xl);
+
+    &--skeleton {
+      width: 32%;
+      padding-top: 32%;
+
+      margin-bottom: var(--gap-xl);
+    }
   }
 }
 
@@ -70,6 +84,13 @@
     padding-top: 32%;
 
     margin-bottom: var(--gap-l);
+
+    &--skeleton {
+      width: 32%;
+      padding-top: 32%;
+
+      margin-bottom: var(--gap-l);
+    }
   }
 }
 
@@ -83,6 +104,13 @@
     padding-top: 49%;
 
     margin-bottom: var(--gap-m);
+
+    &--skeleton {
+      width: 49%;
+      padding-top: 49%;
+
+      margin-bottom: var(--gap-m);
+    }
   }
 }
 
@@ -92,6 +120,13 @@
     padding-top: 100%;
 
     margin-bottom: var(--gap-s);
+
+    &--skeleton {
+      width: 100%;
+      padding-top: 100%;
+
+      margin-bottom: var(--gap-s);
+    }
   }
 }
 

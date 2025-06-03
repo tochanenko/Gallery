@@ -1,17 +1,38 @@
 import classes from "./PhotoGrid.module.scss";
 import { PHOTO_URL } from '../../lib/constants';
-import { Link } from "react-router-dom";
+import { Await, Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 
 export default function PhotoGrid({ photos }) {
   return <>
-    <div className="container">
-      <div className={classes.photo_grid}>
-        {photos.map(photo => <Photo key={photo.id} photo={photo} />)}
-      </div>
-    </div>
+
+    <Suspense fallback={<PhotoGridSkeleton />}>
+      <Await resolve={photos}>
+        {(resolvedPhotos) => <div className={classes.photo_grid}>
+          {resolvedPhotos.map(photo => <Photo key={photo.id} photo={photo} />)}
+        </div>}
+      </Await>
+    </Suspense>
   </>
+}
+
+function PhotoGridSkeleton() {
+  return <div className={classes.photo_grid}>
+    {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(key => <motion.div
+      key={key}
+      className={classes['photo--skeleton']}
+      initial={{ backgroundColor: "var(--skeleton-background)" }}
+      animate={{
+        backgroundColor: ["var(--skeleton-background)", "var(--skeleton-background-tinted)", "var(--skeleton-background)"]
+      }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }}
+    />)}
+  </div>
 }
 
 function Photo({ photo }) {
@@ -27,7 +48,7 @@ function Photo({ photo }) {
     observer.observe(imgRef.current);
 
     return () => observer.disconnect();
-  }, []);
+  }, [isObserved]);
 
   return <>
     <motion.div
