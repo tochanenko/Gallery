@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "motion/react";
 import classes from "./PageProgress.module.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export default function PageProgress() {
   const loading = useSelector(state => state.progress.loading);
