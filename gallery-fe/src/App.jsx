@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '*',
-        element: <ErrorComponent message="Page not found" backendIssue={false} />
+        element: <div className="container"><ErrorComponent message="Page not found" backendIssue={false} /></div>
       },
       {
         index: true,
