@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import HomePage, { loader as randomPhotosLoader } from "./pages/Home";
 import CategoryPage, { loader as photosByCategoryLoader } from "./pages/Category";
-import PhotoPage, { loader as photoByIdLoader } from "./pages/Photo";
+import PhotoPage, { loader as photoByIdLoader } from "./pages/Photo/Photo";
 import { useDispatch, useSelector } from "react-redux";
 import { useTheme } from "./lib/hooks";
 import { LOCAL_USER_UUID } from "./lib/constants";
