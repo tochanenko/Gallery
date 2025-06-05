@@ -659,8 +659,26 @@
         "description": "A life-sized sculpture of Groot made from intricately arranged metal links stands in a forested park, humorously holding a bright orange thermos.",
         "date": "Tue May 06 2025 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "city",
-        "ratings": [],
-        "comments": []
+        "ratings": [
+            {
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "rating": 5
+            }
+        ],
+        "comments": [
+            {
+                "id": "90c41e89-6416-4e31-a032-466a961486f4",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "I am Groot!",
+                "date": "Wed Jun 04 2025 02:23:49 GMT+0300 (Eastern European Summer Time)"
+            },
+            {
+                "id": "00284bb6-a8a0-4db0-b299-4da01b6e9e0c",
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "text": "Wazaaaaaap",
+                "date": "Wed Jun 04 2025 02:24:00 GMT+0300 (Eastern European Summer Time)"
+            }
+        ]
     },
     {
         "id": "aba5bc2b-e51b-4c88-ad15-2c1b857f9150",

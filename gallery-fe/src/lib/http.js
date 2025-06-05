@@ -1,4 +1,5 @@
 import store from "../store";
+import { errorActions } from "../store/error";
 import { progressActions } from "../store/progress";
 import { API_URL } from "./constants";
 
@@ -15,10 +16,20 @@ async function fetchWithLoading({
 
     if (!response.ok) {
       store.dispatch(progressActions.setLoading(false));
-      throw new Response(JSON.stringify({ message: errorMessage }), { status: errorCode });
+      store.dispatch(errorActions.addError({
+        message: errorMessage
+      }));
+      // throw new Response(JSON.stringify({ message: errorMessage }), { status: errorCode });
+      store.dispatch(errorActions.setError("404"));
+      console.log("Error set");
     }
 
     return await response.json();
+  } catch (e) {
+    store.dispatch(errorActions.addError({
+      message: errorMessage
+    }));
+    store.dispatch(errorActions.setError("500"));
   } finally {
     store.dispatch(progressActions.setLoading(false));
   }
@@ -28,7 +39,7 @@ export async function getPhotosByCategory(categoryName) {
   return fetchWithLoading({
     url: `${API_URL}/photos/${categoryName}`,
     errorMessage: 'Cound not fetch photos'
-  }).then(res => res.photos);
+  }).then(res => res ? res.photos : undefined);
 }
 
 export async function authenticateUser(userUUID) {
@@ -36,7 +47,7 @@ export async function authenticateUser(userUUID) {
     url: userUUID ? `${API_URL}/user/${userUUID}` : `${API_URL}/user`,
     params: userUUID ? {} : { method: "POST" },
     errorMessage: 'Could not get user details'
-  }).then(res => res.user);
+  }).then(res => res ? res.user : undefined);
 }
 
 export async function putNewRating(photoId, userId, newRating) {
@@ -71,10 +82,10 @@ export async function getPhotoById(photoId) {
   return fetchWithLoading({
     url: `${API_URL}/photo/${photoId}`,
     errorMessage: 'Cound not fetch photo'
-  }).then(res => res.photo);
+  }).then(res => res ? res.photo : undefined);
 }
 
-export async function putUpdateUserAvatar({id, avatar}) {
+export async function putUpdateUserAvatar({ id, avatar }) {
   return fetchWithLoading({
     url: `${API_URL}/user/${id}`,
     params: {
@@ -85,7 +96,7 @@ export async function putUpdateUserAvatar({id, avatar}) {
       }
     },
     errorMessage: 'Could not update avatar'
-  }).then(res => res.user);
+  }).then(res => res ? res.user : undefined);
 }
 
 export async function putUpdateUserName({ id, name }) {
@@ -99,7 +110,7 @@ export async function putUpdateUserName({ id, name }) {
       }
     },
     errorMessage: 'Could not update avatar'
-  }).then(res => res.user);
+  }).then(res => res ? res.user : undefined);
 }
 
 export async function putNewComment({ photoId, userId, text, date }) {
@@ -113,7 +124,7 @@ export async function putNewComment({ photoId, userId, text, date }) {
       },
     },
     errorMessage: 'Could not add new comment'
-  }).then(res => res.photo);
+  }).then(res => res ? res.photo : undefined);
 }
 
 export async function getRandomPhotos() {

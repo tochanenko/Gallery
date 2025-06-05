@@ -20,8 +20,10 @@ export default function Username({ photo, updateComments }) {
     const enteredUserName = userNameRef.current.value;
     if (enteredUserName !== userState.name) {
       const updatedUser = await putUpdateUserName({ id: userState.id, name: enteredUserName });
-      dispatch(userActions.updateUser({ name: updatedUser.name }));
-      updateComments(photo.comments.map(comment => comment.userId === userState.id ? { ...comment, name: updatedUser.name } : comment));
+      if (updatedUser) {
+        dispatch(userActions.updateUser({ name: updatedUser.name }));
+        updateComments(photo.comments.map(comment => comment.userId === userState.id ? { ...comment, name: updatedUser.name } : comment));
+      }
     }
 
     setEditingUsername(false);

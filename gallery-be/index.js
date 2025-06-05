@@ -40,7 +40,7 @@ app.get('/photos/:categoryId', async (req, res) => {
 // Get X Random Photos from Each Category
 app.get('/random', async (req, res) => {
   const AMOUNT_OF_RANDOM_PHOTOS = 1;
-  const photos = await getPhotosFromFile();  
+  const photos = await getPhotosFromFile();
   const categories = [...new Set(photos.map(photo => photo.category))];
 
   const selectedPhotos = categories.map(category => {
@@ -78,9 +78,13 @@ app.get('/photo/:photoId', async (req, res) => {
   const photos = await getPhotosFromFile();
   let photo = photos.find(p => p.id === req.params.photoId);
 
-  photo = await populateCommentsWithUserData(photo);
+  if (photo) {
+    photo = await populateCommentsWithUserData(photo);
+    res.status(200).json({ photo });
+  } else {
+    res.status(404).json({ message: `Couldn't find photo with id ${req.params.photoId}` });
+  }
 
-  res.status(200).json({ photo });
 });
 
 // Add new comment

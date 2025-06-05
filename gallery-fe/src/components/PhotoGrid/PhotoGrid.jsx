@@ -4,15 +4,15 @@ import { Await, Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Suspense, useEffect, useRef, useState } from "react";
 import Skeleton from "../UI/Skelelton/Skeleton";
+import ErrorComponent from "../ErrorComponent/ErrorComponent";
 
 export default function PhotoGrid({ photos }) {
   return <>
-
     <Suspense fallback={<PhotoGridSkeleton />}>
       <Await resolve={photos}>
-        {(resolvedPhotos) => <div className={classes.photo_grid}>
+        {(resolvedPhotos) => resolvedPhotos ? <div className={classes.photo_grid}>
           {resolvedPhotos.map(photo => <Photo key={photo.id} photo={photo} />)}
-        </div>}
+        </div> : <ErrorComponent />}
       </Await>
     </Suspense>
   </>

@@ -1,7 +1,7 @@
 import MainContaner from "./components/MainContainer/MainContainer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import HomePage, { loader as randomPhotosLoader} from "./pages/Home";
+import HomePage, { loader as randomPhotosLoader } from "./pages/Home";
 import CategoryPage, { loader as photosByCategoryLoader } from "./pages/Category";
 import PhotoPage, { loader as photoByIdLoader } from "./pages/Photo";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,12 +9,18 @@ import { useTheme } from "./lib/hooks";
 import { LOCAL_USER_UUID } from "./lib/constants";
 import { userActions } from "./store/user";
 import { authenticateUser } from "./lib/http";
+import { errorActions } from "./store/error";
+import ErrorComponent from "./components/ErrorComponent/ErrorComponent";
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <MainContaner />,
     children: [
+      {
+        path: '*',
+        element: <ErrorComponent message="Page not found" backendIssue={false} />
+      },
       {
         index: true,
         id: 'random-photos',
@@ -35,7 +41,7 @@ const router = createBrowserRouter([
       }
     ]
   }
-])
+]);
 
 function App() {
   const theme = useTheme();
@@ -47,9 +53,15 @@ function App() {
     let userUUID = localStorage.getItem(LOCAL_USER_UUID);
 
     const user = await authenticateUser(userUUID);
+    if (user) {
+      localStorage.setItem(LOCAL_USER_UUID, user.id);
+      dispatch(userActions.updateUser(user));
+    } else {
+      dispatch(errorActions.addError({
+        message: "Could not authenticate"
+      }));
+    }
 
-    localStorage.setItem(LOCAL_USER_UUID, user.id);
-    dispatch(userActions.updateUser(user));
   }
 
   if (userId === "") {

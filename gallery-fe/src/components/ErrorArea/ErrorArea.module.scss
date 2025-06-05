@@ -1,0 +1,27 @@
+.error_area {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  &__chip {
+    width: 240px;
+    padding: 16px 28px;
+    border-radius: 32px;
+
+    margin: 8px;
+
+    background-color: var(--red);
+    color: var(--white);
+
+    p {
+      margin: 0;
+    }
+
+    &__dismiss {
+      position: absolute;
+      right: 28px;
+
+      cursor: pointer;
+    }
+  }
+}

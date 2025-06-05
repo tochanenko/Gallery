@@ -26,12 +26,15 @@ export default function NewComment({ photo, updateComments }) {
       text: enteredComment,
       date: new Date().toString()
     });
-    updateComments(updatedPhoto.comments);
-    commentRef.current.value = "";
+
+    if (updatedPhoto) {
+      updateComments(updatedPhoto.comments);
+      commentRef.current.value = "";
+    }
   }
 
   return <Card className={classes.new_comment} animateAppearance>
-    {!photo ? <Skeleton className={classes["new_comment--skeleton"]}/> : <div className={classes.block}>
+    {!photo ? <Skeleton className={classes["new_comment--skeleton"]} /> : <div className={classes.block}>
       <UserAvatar photo={photo} updateComments={updateComments} />
       <Username photo={photo} updateComments={updateComments} />
       {userState.name === "" ? <span className={classes.new_comment__hint}>Please add your username before posting your first comment</span> : undefined}
