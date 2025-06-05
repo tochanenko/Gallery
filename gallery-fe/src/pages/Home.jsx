@@ -10,6 +10,7 @@ export default function HomePage() {
   const { randomPhotos: randomPhotosPromise } = useRouteLoaderData('random-photos');
 
   return <>
+    <title>VPhotos &#10072; HOME</title>
     <Suspense fallback={[0, 1, 2, 3].map(key => <div key={key} className={classes.home}><Skeleton className={classes.home__photo} /></div>)}>
       <Await resolve={randomPhotosPromise}>
         {(resolvedRandomPhotos) => resolvedRandomPhotos.map(photosFromCategory => (

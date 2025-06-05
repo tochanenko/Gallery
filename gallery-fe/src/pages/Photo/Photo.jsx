@@ -27,21 +27,37 @@ export default function PhotoPage() {
     setPhoto(prevState => ({ ...prevState, comments: updatedComments }));
   }
 
-  return <div className="main_container">
-    <div className="container">
-      {photo === undefined ? <ErrorComponent /> : (<>
-        <PhotoPreview visible={photoPreview} photo={photo} onClose={() => onSetPhotoPreview(false)} />
+  function getPhotoPageTitle(photo) {
+    if (photo) {
+      if (photo.title !== "") {
+        return photo.title;
+      } else {
+        return "Single photo worth 1000 words";
+      }
+    } else {
+      return "Loading...";
+    }
+  }
 
-        <PhotoBlock photo={photo} onSetPhotoPreview={onSetPhotoPreview} />
+  return <>
+    <title>{`VPhotos \u2758 ${getPhotoPageTitle(photo)}`}</title>
+    <div className="main_container">
+      <div className="container">
+        {photo === undefined ? <ErrorComponent /> : (<>
 
-        <Details photo={photo} onSetPhoto={setPhoto} />
+          <PhotoPreview visible={photoPreview} photo={photo} onClose={() => onSetPhotoPreview(false)} />
 
-        <Comments photo={photo} />
+          <PhotoBlock photo={photo} onSetPhotoPreview={onSetPhotoPreview} />
 
-        <NewComment photo={photo} updateComments={updateComments} />
-      </>)}
+          <Details photo={photo} onSetPhoto={setPhoto} />
+
+          <Comments photo={photo} />
+
+          <NewComment photo={photo} updateComments={updateComments} />
+        </>)}
+      </div>
     </div>
-  </div>
+  </>
 }
 
 export async function loader({ request, params }) {

@@ -24,11 +24,14 @@ export default function ErrorComponent({ message = "Could not fetch resource.", 
     <Button onClick={handleHomePage}>Go to Homepage</Button>
   </>
 
-  return <div className={classes.error}>
-    <div className={classes.error__details}>
-      <h1>An Error Occurred!</h1>
-      <p>E: {message}</p>
-      {backendIssue ? backendIssueTemplate : clientIssueTemplate}
+  return <>
+    <title>{`VPhotos \u2758 Something went wrong!`}</title>
+    <div className={classes.error}>
+      <div className={classes.error__details}>
+        <h1>An Error Occurred!</h1>
+        <p>E: {message}</p>
+        {backendIssue ? backendIssueTemplate : clientIssueTemplate}
+      </div>
     </div>
-  </div>
+  </>
 }

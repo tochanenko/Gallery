@@ -6,6 +6,7 @@ import { formatDate } from "../../lib/utils";
 
 import classes from "./Photo.module.scss";
 import { putNewRating, putPhotoDetails } from "../../lib/http";
+import Button from "../../components/UI/Button/Button";
 
 export default function Details({ photo, onSetPhoto }) {
   const userId = useSelector(state => state.user.id);
@@ -64,7 +65,7 @@ export default function Details({ photo, onSetPhoto }) {
           <input id="title" name="title" defaultValue={photo.title || ''} /><br />
           <label htmlFor="description">Description</label><br />
           <textarea id="description" name="description" defaultValue={photo.description || ''} cols={128} /><br />
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
         </form> : undefined}
 
         <p>{photo.description || 'You don\'t need to say anything. Just observe...'}</p>

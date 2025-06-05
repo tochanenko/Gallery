@@ -1,3 +1,5 @@
+import { CATEGORIES } from "./constants";
+
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
 const HOUR = MINUTE * 60;
@@ -35,4 +37,10 @@ export function relativeFormatDateTime(date) {
   } else {
     return `${Math.trunc(timeDifference / (DAY))} days ago`;
   }
+}
+
+export function getCategoryByUrl(url) {
+  const categoryId = url.slice(url.lastIndexOf('/') + 1);
+  
+  return CATEGORIES.find(category => category.id === categoryId).name;
 }
