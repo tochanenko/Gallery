@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { PHOTO_URL } from "../../lib/constants";
 import Button from "../UI/Button/Button";
 import classes from "./PhotoPreview.module.scss";
-import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 
 export default function PhotoPreview({ photo, visible = false, onClose }) {
   const { scrollY } = useScroll();
@@ -18,29 +18,29 @@ export default function PhotoPreview({ photo, visible = false, onClose }) {
 
   if (!photo) return null;
 
-  return visible && <motion.div
-    className={classes.photo_preview}
-    onClick={onClose}
-    initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
-    animate={{ backgroundColor: "rgba(0, 0, 0, 0.85)" }}
-    exit={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
-    transition={{ duration: 0.1 }}
-  >
-    <motion.div
-      className={classes.photo_preview__image}
-      style={{ aspectRatio: photo.aspectRatio }}
-      layoutId={`photo-${photo.id}`}
-      transition={{ ease: "backInOut" }}
+  return <AnimatePresence>
+    {visible && <motion.div
+      className={classes.photo_preview}
+      onClick={onClose}
+      initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
+      animate={{ backgroundColor: "rgba(0, 0, 0, 0.85)" }}
+      exit={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
+      transition={{ duration: 0.1 }}
     >
       <motion.img
+        className={classes.photo_preview__image}
         src={`${PHOTO_URL}${photo.url}`}
         alt={photo.title}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.8 }}
+        transition={{ duration: 0.1 }}
       />
-    </motion.div>
 
-    <Button
-      className={classes.photo_preview__close}
-      onClick={onClose}
-      aria-label="Close">&times;</Button>
-  </motion.div>
+      <Button
+        className={classes.photo_preview__close}
+        onClick={onClose}
+        aria-label="Close">&times;</Button>
+    </motion.div>}
+  </AnimatePresence>
 }

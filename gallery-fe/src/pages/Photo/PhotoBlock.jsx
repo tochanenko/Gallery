@@ -13,32 +13,24 @@ export default function PhotoBlock({ photo, onSetPhotoPreview }) {
     onSetPhotoPreview(true)
   }
 
-  return <motion.div layout>
+  return <div>
     <Card
       className={classes.photo_block}
-      style={{ overflow: overflowVisible ? "visible" : "hidden" }}
       animateAppearance
     >
       {photo === null ? <Skeleton
         className={classes["photo_block--skeleton"]}
         initialBackground="var(--photo-skeleton-background)"
         tintedBackground="var(--photo-skeleton-background-tinted)"
-      /> : <motion.div
+      /> : <div
         className={classes.photo_block__image}
-        style={{ aspectRatio: photo.aspectRatio }}
-        layoutId={`photo-${photo.id}`}
-        transition={{ ease: "backInOut" }}
-        onLayoutAnimationComplete={() => setOverflowVisible(false)}
       >
-        <motion.img
+        <img
           src={`${PHOTO_URL}${photo.url}`}
           alt={photo.title}
           onClick={handleOpenPreview}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
         />
-      </motion.div>}
+      </div>}
     </Card>
-  </motion.div>
+  </div>
 }
