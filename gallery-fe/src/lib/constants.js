@@ -1,7 +1,7 @@
 import { FIREBASE_URL } from "./secret";
 const LOCAL_URL = "http://localhost:3001";
 
-const USE_LOCAL = true;
+const USE_LOCAL = false;
 
 export const PHOTO_URL = 'http://materials.tochanenko.com/gallery_photos';
 

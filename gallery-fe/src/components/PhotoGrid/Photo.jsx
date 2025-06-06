@@ -13,7 +13,7 @@ export default function Photo({ photo }) {
     const observer = new IntersectionObserver(([entity]) => {
       if (entity.isIntersecting && !isObserved)
         setIsObserved(true);
-    }, { threshold: [0.25] });
+    }, { threshold: [0.15] });
 
     observer.observe(imgRef.current);
 

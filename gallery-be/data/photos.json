@@ -798,7 +798,7 @@
             },
             {
                 "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
-                "rating": 4
+                "rating": 1
             },
             {
                 "userId": "fe762d1f-5f23-45ce-b335-021875937fa5",
@@ -1136,7 +1136,12 @@
         "description": "Vibrant pink blossoms of Malus crabapple tree brighten the garden with their delicate petals and fresh foliage.",
         "date": "Thu May 05 2022 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "flowers_plants",
-        "ratings": [],
+        "ratings": [
+            {
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "rating": 5
+            }
+        ],
         "comments": [],
         "imageWidth": 4032,
         "imageHeight": 3024,
@@ -1412,6 +1417,10 @@
         "ratings": [
             {
                 "userId": "b9e3dcc3-c253-41b0-b96f-545c32e13957",
+                "rating": 5
+            },
+            {
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
                 "rating": 5
             }
         ],
@@ -1729,7 +1738,12 @@
         "description": "Layers of misty Carpathian ridges fade into the distance under a dramatic sky pierced by rays of scattered light.",
         "date": "Fri Aug 18 2023 00:00:00 GMT+0300 (Eastern European Summer Time)",
         "category": "mountains",
-        "ratings": [],
+        "ratings": [
+            {
+                "userId": "222450eb-75f7-4ab8-9c3b-0450d91795e0",
+                "rating": 5
+            }
+        ],
         "comments": [],
         "imageWidth": 4000,
         "imageHeight": 3000,

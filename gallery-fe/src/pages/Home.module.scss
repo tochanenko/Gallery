@@ -44,8 +44,8 @@
     margin: 0;
 
     font-family: 'e-Ukraine Head Light';
-    color: white;
+    color: var(--homepage-color);
     font-size: 2rem;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    text-shadow: var(--homepage-text-shadow);
   }
 }

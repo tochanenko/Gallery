@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { useScroll, useTransform, motion, useMotionValueEvent } from 'motion/react';
 
 import classes from './Header.module.scss';
@@ -15,7 +15,10 @@ export default function Header() {
   const theme = useTheme();
 
   const { scrollY } = useScroll();
-  const headerShadow = useTransform(scrollY, [0, 100], ["rgba(100, 100, 111, 0.0) 0 0 0", "rgba(100, 100, 111, 0.2) 0px 7px 29px"]);
+  const headerShadow = useTransform(scrollY, [0, 100], [
+    theme === THEME_DAY ? "rgba(100, 100, 111, 0.0) 0 0 0" : "",
+    theme === THEME_DAY ? "rgba(100, 100, 111, 0.2) 0px 7px 29px" : ""
+  ]);
   const lastScrollY = useRef(0);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -36,7 +39,7 @@ export default function Header() {
   >
     <motion.header
       initial={{ y: 0 }}
-      style={{ boxShadow: theme === THEME_DAY ? headerShadow : undefined }}
+      style={{ boxShadow: headerShadow }}
       transition={{ duration: 0.3 }}
       className={classes.header__nav}
     >

@@ -46,9 +46,8 @@
 
     box-sizing: border-box;
 
-    background-color: rgba(0, 0, 0, 0.75);
-
-    color: white;
+    background-color: var(--photo-grid-details-background);
+    color: var(--photo-grid-details-color);
     font-family: 'e-Ukraine Head Light';
 
     opacity: 0;

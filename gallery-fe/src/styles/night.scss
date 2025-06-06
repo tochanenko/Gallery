@@ -1,22 +1,22 @@
 .night {
   /* Default Styles */
-  --body-background: rgb(16, 16, 16);
-  --background: rgb(32, 32, 32);
-  --background-secondary: rgb(48, 48, 48);
-  --text: rgb(250, 250, 250);
+  --body-background: var(--black-700);
+  --background: var(--black-600);
+  --background-secondary: var(--black-500);
+  --text: var(--gray-200);
 
   /* Photo */
   --photo-background: var(--background);
 
   /* Header */
-  --header-border: rgba(255, 255, 255, 0.05);
-  --header-background: rgba(32, 32, 32, 0.8);
-  --header-hover: rgba(255, 255, 255, 0.1);
+  --header-border: rgb(from var(--white) r g b / 0.05);
+  --header-background: rgb(from var(--black-600) r g b / 0.8);
+  --header-hover: rgb(from var(--white) r g b / 0.1);
   --header-image-filter: invert(100%);
 
   /* Footer */
-  --footer-color: rgb(171, 180, 193);
-  --footer-hover-link: var(--blue-lighter);
+  --footer-color: var(--olive-300);
+  --footer-hover-link: var(--primary-500);
 
   /* Shadow */
   --card-shadow: rgba(100, 100, 111, 0.2) 0 0 0;
@@ -24,36 +24,36 @@
   --card-border: 1px solid rgba(255, 255, 255, 0.08);
 
   /* Rating */
-  --circle-empty: rgba(255, 255, 255, 0.3);
-  --circle-filled: rgba(255, 165, 255, 0.7);
-  --circle-half-filled: rgba(255, 165, 255, 0.3);
-  --circle-user-filled: orange;
-  --circle-average: rgba(255, 255, 255, 0.7);
-  --circle-half-average: rgba(255, 255, 255, 0.3);
+  --circle-empty: var(--green-100);
+  --circle-filled: rgb(from var(--green-300) r g b / 1);
+  --circle-half-filled: rgb(from var(--green-200) r g b / 0.3);
+  --circle-user-filled: var(--green-a700);
+  --circle-average: rgb(from var(--green-500) r g b / 0.7);
+  --circle-half-average: rgb(from var(--green-500) r g b / 0.2);
 
   /* Dropdown */
-  --dropdown-background: rgba(32, 32, 32, 1);
-  --dropdown-hover: rgba(255, 255, 255, 0.1);
+  --dropdown-background: var(--black-600);
+  --dropdown-hover: rgb(from var(--white) r g b / 0.1);
 
   /* Progress */
-  --progress-color: rgb(50, 205, 50);
+  --progress-color: var(--green-a700);
 
   /* Skeleton */
-  --skeleton-background: rgb(48, 48, 48);
-  --skeleton-background-tinted: rgb(64, 64, 64);
+  --skeleton-background: var(--black-500);
+  --skeleton-background-tinted: var(--black-400);
 
   /* Photo Skeleton */
-  --photo-skeleton-background: rgb(48, 48, 48);
-  --photo-skeleton-background-tinted: rgb(64, 64, 64);
+  --photo-skeleton-background: var(--black-500);
+  --photo-skeleton-background-tinted: var(--black-400);
 
   /* Button */
-  --button-background: var(--blue);
-  --button-color: var(--blue-light);
+  --button-background: var(--primary-500);
+  --button-color: var(--primary-100);
   --button-shadow: none;
-  --button-shadow-hover: 0 0 10px var(--blue), 0 0 10px var(--blue);
-  --button-border: 2px solid var(--blue-lighter);
+  --button-shadow-hover: 0 0 10px var(--primary-500), 0 0 10px var(--primary-500);
+  --button-border: 2px solid var(--primary-300);
   --button-border-inline: 2px solid rgba(255, 255, 255, 0.15);
-  --button-background-inline: var(--blue-dark);
+  --button-background-inline: var(--primary-900);
   
   --button-background-disabled: rgb(61, 61, 61);
   --button-border-disabled: 2px solid rgb(100, 100, 100);
@@ -61,8 +61,8 @@
 
   /* Input */
   --input-background: var(--background);
-  --input-background-hover: rgba(255, 255, 255, 0.05);
+  --input-background-hover: rgb(from var(--white) r g b / 0.05);
   --input-border: 2px solid rgba(255, 255, 255, 0.15);
-  --input-border-focus: 2px solid var(--blue);
+  --input-border-focus: 2px solid var(--primary-500);
   --input-border-error: 2px solid var(--red);
 }

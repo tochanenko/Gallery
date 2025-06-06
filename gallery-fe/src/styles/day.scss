@@ -1,22 +1,22 @@
 .day {
   /* Default Styles */
-  --body-background: rgb(250, 250, 250);
-  --background: rgb(255, 255, 255);
-  --background-secondary: rgb(246, 246, 246);
-  --text: rgb(32, 32, 32);
+  --body-background: var(--gray-200);
+  --background: var(--gray-100);
+  --background-secondary: var(--gray-300);
+  --text: var(--black-600);
 
   /* Photo */
-  --photo-background: var(--almost-black);
+  --photo-background: var(--black-800);
 
   /* Header */
-  --header-border: rgba(0, 0, 0, 0.05);
-  --header-background: rgba(255, 255, 255, 0.8);
-  --header-hover: rgba(0, 0, 0, 0.1);
+  --header-border: rgb(from var(--black-900) r g b / 0.05);
+  --header-background: rgb(from var(--white) r g b / 0.8);
+  --header-hover: rgb(from var(--black-900) r g b / 0.1);
   --header-image-filter: invert(0%);
 
   /* Footer */
-  --footer-color: rgb(53, 59, 61);
-  --footer-hover-link: var(--blue-dark);
+  --footer-color: var(--olive-900);
+  --footer-hover-link: var(--primary-700);
 
   /* Shadow */
   --card-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
@@ -24,36 +24,36 @@
   --card-border: 1px solid rgba(0, 0, 0, 0);
 
   /* Rating */
-  --circle-empty: rgba(0, 0, 0, 0.1);
-  --circle-filled: rgba(255, 165, 255, 0.7);
-  --circle-half-filled: rgba(255, 165, 255, 0.3);
-  --circle-user-filled: orange;
-  --circle-average: rgba(0, 0, 0, 0.7);
-  --circle-half-average: rgba(0, 0, 0, 0.1);
+  --circle-empty: rgb(from var(--green-100) r g b / 0.1);
+  --circle-filled: rgb(from var(--green-900) r g b / 0.7);
+  --circle-half-filled: rgb(from var(--green-900) r g b / 0.3);
+  --circle-user-filled: var(--green-a700);
+  --circle-average: rgb(from var(--green-500) r g b / 0.7);
+  --circle-half-average: rgb(from var(--green-500) r g b / 0.2);
 
   /* Dropdown */
-  --dropdown-background: rgba(255, 255, 255, 1);
-  --dropdown-hover: rgba(0, 0, 0, 0.1);
+  --dropdown-background: var(--white);
+  --dropdown-hover: rgb(from var(--black-900) r g b / 0.1);
 
   /* Progress */
-  --progress-color: rgb(32, 135, 32);
+  --progress-color: var(--green-700);
 
   /* Skeleton */
-  --skeleton-background: rgb(230, 230, 230);
-  --skeleton-background-tinted: rgb(240, 240, 240);
+  --skeleton-background: var(--gray-500);
+  --skeleton-background-tinted: var(--gray-400);
 
   /* Photo Skeleton */
-  --photo-skeleton-background: var(--almost-black);
-  --photo-skeleton-background-tinted: rgb(32, 32, 32);
+  --photo-skeleton-background: var(--black-800);
+  --photo-skeleton-background-tinted: var(--black-600);
 
   /* Button */
-  --button-background: var(--blue);
-  --button-color: var(--blue-light);
+  --button-background: var(--primary-500);
+  --button-color: var(--primary-100);
   --button-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
   --button-shadow-hover: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
-  --button-border: 2px solid var(--blue-lighter);
+  --button-border: 2px solid var(--primary-300);
   --button-border-inline: 2px solid rgba(0, 0, 0, 0.15);
-  --button-background-inline: var(--blue-light);
+  --button-background-inline: var(--primary-100);
   
   --button-background-disabled: rgb(237, 237, 237);
   --button-border-disabled: 2px solid rgb(209, 209, 209);
@@ -61,8 +61,8 @@
 
   /* Input */
   --input-background: var(--background);
-  --input-background-hover: rgba(0, 0, 0, 0.05);
+  --input-background-hover: rgb(from var(--black-900) r g b / 0.05);
   --input-border: 2px solid rgba(0, 0, 0, 0.15);
-  --input-border-focus: 2px solid var(--blue);
+  --input-border-focus: 2px solid var(--primary-500);
   --input-border-error: 2px solid var(--red);
 }
