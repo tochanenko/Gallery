@@ -2,7 +2,7 @@ import { useState } from "react";
 import classes from "./Rating.module.scss";
 import { useSelector } from "react-redux";
 
-export default function Rating({ ratings, photoId, handleRating }) {
+export default function Rating({ ratings, photoId, handleRating, className="" }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const rating = calculateRating(ratings);
   const ratingsCount = ratings.length;
@@ -33,7 +33,7 @@ export default function Rating({ ratings, photoId, handleRating }) {
     return Number.isInteger(num) ? num : Number(num.toFixed(2));
   }
 
-  return <>
+  return <div className={className}>
     {[1, 2, 3, 4, 5].map(circle => (
       <div
         key={circle}
@@ -48,6 +48,6 @@ export default function Rating({ ratings, photoId, handleRating }) {
         />
       </div>
     ))}
-    <span className={classes.rating_number}>{rating ? formatNumber(rating) : ''} ({ratingsCount} votes)</span>
-  </>;
+    <span className={classes.rating_number}>{rating ? formatNumber(rating) : ''} ({ratingsCount} vote{ratingsCount % 10 === 1 ? '' : 's'})</span>
+  </div>;
 }
