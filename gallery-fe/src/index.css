@@ -39,3 +39,21 @@ body {
 
   padding: 16px;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited,
+  &:link {
+    color: var(--text);
+  }
+}

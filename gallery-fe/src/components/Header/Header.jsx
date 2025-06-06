@@ -12,7 +12,7 @@ export default function Header() {
   const { mobileVisible, handleHideMobile } = useContext(HeaderContext);
 
   const { scrollY } = useScroll();
-  const headerShadow = useTransform(scrollY, [0, 100], ["var(--card-shadow-flat)", "var(--card-shadow)"]);
+  const headerShadow = useTransform(scrollY, [0, 100], ["rgba(100, 100, 111, 0.0) 0 0 0", "rgba(100, 100, 111, 0.2) 0px 7px 29px"]);
   const lastScrollY = useRef(0);
 
   useMotionValueEvent(scrollY, "change", (latest) => {

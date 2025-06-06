@@ -1,8 +1,8 @@
 .day {
   /* Default Styles */
-  --body-background: rgb(250, 250, 250);
-  --background: rgb(255, 255, 255);
-  --background-secondary: rgb(246, 246, 246);
+  --body-background: rgb(242, 236, 222);
+  --background: rgba(255, 255, 255, 0.4);
+  --background-secondary: rgb(226, 220, 211);
   --text: rgb(32, 32, 32);
 
   /* Photo */
@@ -14,12 +14,8 @@
   --header-hover: rgba(0, 0, 0, 0.1);
   --header-image-filter: invert(0%);
 
-  /* Footer */
-  --footer-color: rgb(53, 59, 61);
-  --footer-hover-link: var(--blue-dark);
-
   /* Shadow */
-  --card-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
+  --card-shadow: rgba(100, 100, 111, 0.2) 0px 0px 0px;
   --card-shadow-flat: rgba(100, 100, 111, 0.0) 0 0 0;
   --card-border: 1px solid rgba(0, 0, 0, 0);
 

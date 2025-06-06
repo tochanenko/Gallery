@@ -14,6 +14,10 @@
   --header-hover: rgba(255, 255, 255, 0.1);
   --header-image-filter: invert(100%);
 
+  /* Footer */
+  --footer-color: rgb(171, 180, 193);
+  --footer-hover-link: var(--blue-lighter);
+
   /* Shadow */
   --card-shadow: rgba(100, 100, 111, 0.2) 0 0 0;
   --card-shadow-flat: rgba(100, 100, 111, 0.0) 0 0 0;
