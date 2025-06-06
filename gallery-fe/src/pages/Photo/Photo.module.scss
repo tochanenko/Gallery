@@ -8,17 +8,21 @@
 
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  overflow: hidden;
-
-  img {
-    max-width: 100%;
+  &__image {
     max-height: 512px;
-    height: auto;
-    width: auto;
-    object-fit: contain;
+    max-width: 100%;
 
-    cursor: zoom-in;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      display: block;
+
+      cursor: zoom-in;
+    }
   }
 
   &--skeleton {

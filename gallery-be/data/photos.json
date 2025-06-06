@@ -54,9 +54,9 @@
             }
         ],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "e8224671-5425-4d69-9cf1-ca03ac45506b",
@@ -273,9 +273,9 @@
             }
         ],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "d076ae66-0290-4f13-9c0b-9d7275821c22",
@@ -299,9 +299,9 @@
         "category": "city",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "8164c854-5043-4e2a-97a1-f24e58b25876",
@@ -312,9 +312,9 @@
         "category": "city",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "4c9d3668-c44d-444c-9506-0ec5e43188f1",
@@ -439,9 +439,9 @@
         "category": "city",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "40e290f5-19a7-4665-be39-f22b3ead6129",
@@ -478,9 +478,9 @@
         "category": "city",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "cf303ab2-3432-4e10-b720-96c23a6c8aa0",
@@ -504,9 +504,9 @@
         "category": "city",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "3e4bfed0-7c01-4357-ae1e-73903cb84baf",
@@ -517,9 +517,9 @@
         "category": "city",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "ec5daf50-915f-4787-96b9-fa8e5dfd90fb",
@@ -569,9 +569,9 @@
         "category": "city",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4032,
-        "imageHeight": 3024,
-        "aspectRatio": 1.333333
+        "imageWidth": 3024,
+        "imageHeight": 4032,
+        "aspectRatio": 0.75
     },
     {
         "id": "79e4ed89-92c4-4abf-85b2-a9babe029f94",
@@ -608,9 +608,9 @@
         "category": "city",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4032,
-        "imageHeight": 3024,
-        "aspectRatio": 1.333333
+        "imageWidth": 3024,
+        "imageHeight": 4032,
+        "aspectRatio": 0.75
     },
     {
         "id": "26af9ea4-3177-4458-9846-988fcc88553e",
@@ -621,9 +621,9 @@
         "category": "city",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "3afcc318-14d0-4ae5-957a-d326113b34ec",
@@ -686,9 +686,9 @@
         "category": "city",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4032,
-        "imageHeight": 3024,
-        "aspectRatio": 1.333333
+        "imageWidth": 3024,
+        "imageHeight": 4032,
+        "aspectRatio": 0.75
     },
     {
         "id": "fe7ce44a-de82-4668-94f9-4fcf81b65821",
@@ -712,9 +712,9 @@
         "category": "city",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "a1948037-b83f-4a27-95c9-262e8a2d8448",
@@ -738,9 +738,9 @@
         "category": "city",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "7642e643-053a-45f4-b65b-3a5b3816ffde",
@@ -776,9 +776,9 @@
         "category": "city",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4032,
-        "imageHeight": 3024,
-        "aspectRatio": 1.333333
+        "imageWidth": 3024,
+        "imageHeight": 4032,
+        "aspectRatio": 0.75
     },
     {
         "id": "fe762d1f-5f23-45ce-b335-021875937ff4",
@@ -842,9 +842,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4032,
-        "imageHeight": 3024,
-        "aspectRatio": 1.333333
+        "imageWidth": 3024,
+        "imageHeight": 4032,
+        "aspectRatio": 0.75
     },
     {
         "id": "0d1bb280-1284-42cf-8150-2ea6c65a7739",
@@ -886,9 +886,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4032,
-        "imageHeight": 3024,
-        "aspectRatio": 1.333333
+        "imageWidth": 3024,
+        "imageHeight": 4032,
+        "aspectRatio": 0.75
     },
     {
         "id": "d1d20022-9c7e-4e07-bacd-1915d03783ac",
@@ -912,9 +912,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "86ff67bd-ef6f-43f1-a253-cb2826a5fe1e",
@@ -956,9 +956,9 @@
             }
         ],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "00d75b5e-1646-400d-aa1b-6fa77287b2bb",
@@ -995,9 +995,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "6e026f19-36b3-40c2-a8cc-6a52dbb7b7d1",
@@ -1073,9 +1073,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "6b1c1ccc-669a-49b9-8218-1a1ec72171f2",
@@ -1151,9 +1151,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "62051497-a569-49a5-80d8-ede020373a2e",
@@ -1203,9 +1203,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4032,
-        "imageHeight": 3024,
-        "aspectRatio": 1.333333
+        "imageWidth": 3024,
+        "imageHeight": 4032,
+        "aspectRatio": 0.75
     },
     {
         "id": "30eb321f-591e-4eca-8bfc-248e89126b2e",
@@ -1229,9 +1229,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "17a29bb5-59cd-45ca-ab43-f8031e16356e",
@@ -1242,9 +1242,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4032,
-        "imageHeight": 3024,
-        "aspectRatio": 1.333333
+        "imageWidth": 3024,
+        "imageHeight": 4032,
+        "aspectRatio": 0.75
     },
     {
         "id": "0c5ef179-fef8-41c2-8310-bd5f563d9f9f",
@@ -1268,9 +1268,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "46ac09e2-a0cb-4f68-b5ce-83632779462d",
@@ -1307,9 +1307,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "2ecc0417-bb6e-4990-93cb-2e5b4a33c3c5",
@@ -1320,9 +1320,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4032,
-        "imageHeight": 3024,
-        "aspectRatio": 1.333333
+        "imageWidth": 3024,
+        "imageHeight": 4032,
+        "aspectRatio": 0.75
     },
     {
         "id": "46c4656c-2255-402f-bd95-e9afb9acb384",
@@ -1346,9 +1346,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "a65cc8b2-bc31-4864-8fa4-b0f8397249f9",
@@ -1359,9 +1359,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4032,
-        "imageHeight": 3024,
-        "aspectRatio": 1.333333
+        "imageWidth": 3024,
+        "imageHeight": 4032,
+        "aspectRatio": 0.75
     },
     {
         "id": "4e34692e-11ad-4353-ad4b-d005f03fb686",
@@ -1372,9 +1372,9 @@
         "category": "flowers_plants",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "64fcb7a8-af09-4bd0-8caf-b2feba870127",
@@ -1464,9 +1464,9 @@
             }
         ],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "ff552a71-f0be-42fe-bfb8-efccd9701a82",
@@ -1490,9 +1490,9 @@
         "category": "mountains",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "e2b3b1c0-eb47-46ef-ace8-22cbfa823b1c",
@@ -1569,9 +1569,9 @@
             }
         ],
         "comments": [],
-        "imageWidth": 4032,
-        "imageHeight": 3024,
-        "aspectRatio": 1.333333
+        "imageWidth": 3024,
+        "imageHeight": 4032,
+        "aspectRatio": 0.75
     },
     {
         "id": "764abe6e-6c80-4165-825a-9b80979cb96b",
@@ -1770,9 +1770,9 @@
         "category": "mountains",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "a38d3463-309b-468a-b545-bebe9b79f521",
@@ -1796,9 +1796,9 @@
         "category": "mountains",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "6b5342f2-cfcd-4ac2-88de-7d6166a36ba5",
@@ -1848,9 +1848,9 @@
         "category": "mountains",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "b75104a2-6a45-45ee-a7bc-a0db8155c5ae",
@@ -1931,9 +1931,9 @@
         "category": "mountains",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "9c883a08-9a32-4616-958f-ab3c37d294e3",
@@ -2178,9 +2178,9 @@
         "category": "mountains",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "da217822-9d45-4def-b746-05a3f94750d2",
@@ -2191,9 +2191,9 @@
         "category": "mountains",
         "ratings": [],
         "comments": [],
-        "imageWidth": 4000,
-        "imageHeight": 3000,
-        "aspectRatio": 1.333333
+        "imageWidth": 3000,
+        "imageHeight": 4000,
+        "aspectRatio": 0.75
     },
     {
         "id": "f8cb1f4e-6088-4a0f-b2b4-0a64ab4efff5",

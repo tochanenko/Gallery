@@ -8,8 +8,8 @@ export const MODE_AUTO = "mode_auto";
 export const MODE_USER = "mode_user";
 
 const initialThemeState = {
-  theme: localStorage.getItem(LOCAL_THEME),
-  mode: localStorage.getItem(LOCAL_THEME_MODE)
+  theme: localStorage.getItem(LOCAL_THEME) ?? THEME_NIGHT,
+  mode: localStorage.getItem(LOCAL_THEME_MODE) ?? MODE_AUTO
 };
 
 const themeSlice = createSlice({
