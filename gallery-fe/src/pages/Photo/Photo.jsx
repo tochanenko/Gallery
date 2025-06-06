@@ -9,6 +9,7 @@ import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
 import PhotoBlock from "./PhotoBlock";
 import Comments from "./Comments";
 import Details from "./Details";
+// import PhotoPreview from "./PhotoPreview";
 
 export default function PhotoPage() {
   const [photo, setPhoto] = useState(null);
@@ -45,9 +46,16 @@ export default function PhotoPage() {
       <div className="container">
         {photo === undefined ? <ErrorComponent /> : (<>
 
-          <PhotoPreview visible={photoPreview} photo={photo} onClose={() => onSetPhotoPreview(false)} />
+          {/* <PhotoPreview visible={photoPreview} photo={photo} onClose={() => onSetPhotoPreview(false)} /> */}
 
           <PhotoBlock photo={photo} onSetPhotoPreview={onSetPhotoPreview} />
+
+          {photoPreview && (
+            <PhotoPreview
+              photo={photo}
+              onClose={() => setPhotoPreview(false)}
+            />
+          )}
 
           <Details photo={photo} onSetPhoto={setPhoto} />
 

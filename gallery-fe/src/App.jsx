@@ -61,7 +61,6 @@ function App() {
         message: "Could not authenticate"
       }));
     }
-
   }
 
   if (userId === "") {

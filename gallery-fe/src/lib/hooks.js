@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { MODE_AUTO } from "../store/theme";
+import { MODE_AUTO, THEME_NIGHT } from "../store/theme";
+import { LOCAL_THEME, LOCAL_THEME_MODE } from "./constants";
 
 export function useBrowserTheme() {
   function getCurrentTheme() {
@@ -26,6 +27,8 @@ export function useBrowserTheme() {
 }
 
 export function useTheme() {
+  setDefaultTheme();
+
   const browserTheme = useBrowserTheme();
   const themeState = useSelector(state => state.theme);
 
@@ -33,5 +36,13 @@ export function useTheme() {
     return browserTheme;
   } else {
     return themeState.theme;
+  }
+}
+
+async function setDefaultTheme() {
+  const theme = localStorage.getItem(LOCAL_THEME_MODE);
+  if (!theme) {
+    localStorage.setItem(LOCAL_THEME_MODE, MODE_AUTO);
+    localStorage.setItem(LOCAL_THEME, THEME_NIGHT);
   }
 }
