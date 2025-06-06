@@ -6,10 +6,13 @@ import HeaderContent from './HeaderContent.jsx';
 import HeaderLogo from './HeaderLogo.jsx';
 import HeaderMobile from './HeaderMobile';
 import { HeaderContext } from '../../store/header-context';
+import { useTheme } from '../../lib/hooks';
+import { THEME_DAY } from '../../store/theme';
 
 export default function Header() {
   const [hidden, setHidden] = useState(false);
   const { mobileVisible, handleHideMobile } = useContext(HeaderContext);
+  const theme = useTheme();
 
   const { scrollY } = useScroll();
   const headerShadow = useTransform(scrollY, [0, 100], ["rgba(100, 100, 111, 0.0) 0 0 0", "rgba(100, 100, 111, 0.2) 0px 7px 29px"]);
@@ -33,7 +36,7 @@ export default function Header() {
   >
     <motion.header
       initial={{ y: 0 }}
-      style={{ boxShadow: headerShadow }}
+      style={{ boxShadow: theme === THEME_DAY ? headerShadow : undefined }}
       transition={{ duration: 0.3 }}
       className={classes.header__nav}
     >

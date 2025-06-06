@@ -27,6 +27,7 @@ export default function PhotoBlock({ photo, onSetPhotoPreview }) {
         className={classes.photo_block__image}
         style={{ aspectRatio: photo.aspectRatio }}
         layoutId={`photo-${photo.id}`}
+        transition={{ ease: "backInOut" }}
         onLayoutAnimationComplete={() => setOverflowVisible(false)}
       >
         <motion.img

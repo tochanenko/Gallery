@@ -46,12 +46,7 @@ export default function PhotoPage() {
         {photo === undefined ? <ErrorComponent /> : (<>
           <PhotoBlock photo={photo} onSetPhotoPreview={onSetPhotoPreview} />
 
-          {photoPreview && (
-            <PhotoPreview
-              photo={photo}
-              onClose={() => setPhotoPreview(false)}
-            />
-          )}
+          <PhotoPreview photo={photo} visible={photoPreview} onClose={() => setPhotoPreview(false)} />
 
           <Details photo={photo} onSetPhoto={setPhoto} />
 

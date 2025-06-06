@@ -35,7 +35,7 @@
     border: var(--button-border-disabled);
     color: var(--button-color-disabled);
     box-shadow: none;
-    cursor: default;
+    cursor: not-allowed;
 
     &:hover, &:active {
       background-color: var(--button-background-disabled);

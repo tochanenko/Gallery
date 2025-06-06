@@ -90,6 +90,7 @@
     padding: 16px;
     cursor: pointer;
     border-radius: 32px;
+    display: flex;
 
     &:hover {
       background-color: var(--header-hover);
