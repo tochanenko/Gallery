@@ -1,4 +1,7 @@
 import { FIREBASE_URL } from "./secret";
+
+export const VERSION = "v1.0.1";
+
 const LOCAL_URL = "http://localhost:3001";
 
 const USE_LOCAL = false;

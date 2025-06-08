@@ -33,7 +33,7 @@ export default function NewComment({ photo, updateComments }) {
     }
   }
 
-  return <Card className={classes.new_comment} animateAppearance>
+  return <Card className={classes.new_comment} noPadding animateAppearance>
     {!photo ? <Skeleton className={classes["new_comment--skeleton"]} /> : <div className={classes.block}>
       <UserAvatar photo={photo} updateComments={updateComments} />
       <Username photo={photo} updateComments={updateComments} />

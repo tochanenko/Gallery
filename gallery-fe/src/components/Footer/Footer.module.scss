@@ -6,13 +6,29 @@
 
   padding-bottom: 64px;
 
-  &__copyright {
-    font-family: 'e-Ukraine Head Light';
+  &__info {
     display: inline-block;
     flex-grow: 1;
 
-    font-weight: 800;
-    font-size: 1.2rem;
+    &__copyright {
+      font-family: 'e-Ukraine Head Light';
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+
+    &__version__link {
+      color: var(--footer-color);
+      transition: color .3s;
+
+      &:visited,
+      &:link {
+        color: var(--footer-color);
+      }
+
+      &:hover {
+        color: var(--primary-700);
+      }
+    }
   }
 
   &__links {
@@ -46,7 +62,7 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    &__copyright {
+    &__info {
       width: 100%;
       flex-shrink: 0;
       text-align: center;

@@ -41,6 +41,7 @@ export default function Details({ photo, onSetPhoto }) {
     <Card
       className={classes.photo_info}
       animateAppearance
+      noPadding
     >
       {photo === null || undefined ? <Skeleton className={classes["photo_info--skeleton"]} /> : <div className={classes.block}>
         <h2 className={classes.title}>{photo.title || 'Single photo worth 1000 words'}</h2>

@@ -11,6 +11,8 @@ import { userActions } from "./store/user";
 import { authenticateUser } from "./lib/http";
 import { errorActions } from "./store/error";
 import ErrorComponent from "./components/ErrorComponent/ErrorComponent";
+import Policy from "./pages/Policy";
+import Updates from "./pages/Updates";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
         id: 'photo',
         element: <PhotoPage />,
         loader: photoByIdLoader
+      },
+      {
+        path: 'policy',
+        element: <Policy />
+      },
+      {
+        path: '/updates',
+        element: <Updates />
       }
     ]
   }

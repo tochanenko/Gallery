@@ -12,6 +12,7 @@ export default function PhotoBlock({ photo, onSetPhotoPreview }) {
     <Card
       className={classes.photo_block}
       animateAppearance
+      noPadding
     >
       {photo === null ? <Skeleton
         className={classes["photo_block--skeleton"]}

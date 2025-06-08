@@ -18,10 +18,11 @@
   --footer-color: var(--olive-900);
   --footer-hover-link: var(--primary-700);
 
-  /* Shadow */
+  /* Card */
   --card-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
   --card-shadow-flat: rgba(100, 100, 111, 0.0) 0 0 0;
   --card-border: 1px solid rgba(0, 0, 0, 0);
+  --card-divider: var(--gray-500);
 
   /* Rating */
   --circle-empty: rgb(from var(--green-100) r g b / 0.1);

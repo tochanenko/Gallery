@@ -8,7 +8,7 @@ import Drawable from "../UI/Drawable/Drawable";
 export default function Comment({ comment, ...props }) {
   const generator = new AvatarGenerator();
 
-  return <Card className={`${classes.comment} ${props.className ? props.className : ''}`} {...props}>
+  return <Card className={`${classes.comment} ${props.className ? props.className : ''}`} contentClassName={classes.comment__card_content} {...props}>
     <Drawable
       className={classes.comment__avatar}
       src={generator.generateRandomAvatar(comment.userId + comment.avatar)}

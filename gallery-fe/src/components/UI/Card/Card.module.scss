@@ -3,6 +3,18 @@
   border-radius: 32px;
   box-shadow: var(--card-shadow);
   border: var(--card-border);
-  padding: 16px 28px;
   box-sizing: border-box;
+
+  &__title {
+    padding: 28px 28px 16px 28px;
+    border-bottom: 1px solid var(--card-divider);
+  }
+
+  &__content {
+    padding: 16px 28px;
+  }
+}
+
+.nopadding {
+  padding: 0;
 }
