@@ -24,7 +24,13 @@ export default function PhotoPage() {
   }, [photoPromise]);
 
   function updateComments(updatedComments) {
-    setPhoto(prevState => ({ ...prevState, comments: updatedComments }));
+    setPhoto(prevState => {
+      if (prevState.comments) {
+        return { ...prevState, comments: updatedComments };
+      } else {
+        return {...prevState, }
+      }
+    });
   }
 
   function getPhotoPageTitle(photo) {

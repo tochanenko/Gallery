@@ -14,7 +14,12 @@ export default function UserAvatar({ photo, updateComments }) {
     const user = await putUpdateUserAvatar({ id: userState.id, avatar: nextAvatar });
     if (user) {
       dispatch(userActions.updateUser({ avatar: user.avatar }));
-      updateComments(photo.comments.map(comment => comment.userId === userState.id ? { ...comment, avatar: user.avatar } : comment));
+      if (photo.comments) {
+        updateComments(photo.comments.map(comment => comment.userId === userState.id
+          ? { ...comment, avatar: user.avatar }
+          : comment
+        ));
+      }
     }
   }
 

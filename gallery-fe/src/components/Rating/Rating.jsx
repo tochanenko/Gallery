@@ -3,9 +3,11 @@ import classes from "./Rating.module.scss";
 import { useSelector } from "react-redux";
 
 export default function Rating({ ratings, photoId, handleRating, className="" }) {
+  const photoRatings = ratings ?? [];
+
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const rating = calculateRating(ratings);
-  const ratingsCount = ratings.length;
+  const rating = calculateRating(photoRatings);
+  const ratingsCount = photoRatings.length;
   const userId = useSelector(state => state.user.id);
 
   function calculateRating(ratings) {
@@ -44,7 +46,7 @@ export default function Rating({ ratings, photoId, handleRating, className="" })
       >
         <div
           className={classes.rating_circle}
-          style={{ background: `linear-gradient(to right, ${getRatingForUser(ratings) >= circle ? 'var(--circle-filled)' : 'var(--circle-average)'} ${calculatePercent(ratings, circle)}%, ${getRatingForUser(ratings) >= circle ? 'var(--circle-half-filled)' : 'var(--circle-half-average)'} ${calculatePercent(ratings, circle)}%` }}
+          style={{ background: `linear-gradient(to right, ${getRatingForUser(photoRatings) >= circle ? 'var(--circle-filled)' : 'var(--circle-average)'} ${calculatePercent(photoRatings, circle)}%, ${getRatingForUser(photoRatings) >= circle ? 'var(--circle-half-filled)' : 'var(--circle-half-average)'} ${calculatePercent(photoRatings, circle)}%` }}
         />
       </div>
     ))}

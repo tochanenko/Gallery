@@ -15,6 +15,10 @@ export default function Details({ photo, onSetPhoto }) {
       const updatedRating = await putNewRating(photo.id, userId, newRating);
       if (updatedRating) {
         onSetPhoto(prev => {
+          if (!prev.ratings) {
+            return { ...prev, ratings: [newRating] };
+          }
+
           const existingIndex = prev.ratings.findIndex(rating => rating.userId === userId);
           let updatedRatings;
 
@@ -38,7 +42,7 @@ export default function Details({ photo, onSetPhoto }) {
       className={classes.photo_info}
       animateAppearance
     >
-      {photo === null ? <Skeleton className={classes["photo_info--skeleton"]} /> : <div className={classes.block}>
+      {photo === null || undefined ? <Skeleton className={classes["photo_info--skeleton"]} /> : <div className={classes.block}>
         <h2 className={classes.title}>{photo.title || 'Single photo worth 1000 words'}</h2>
         <div className={classes.details}>
           <Rating className={classes.ratings} ratings={photo.ratings} handleRating={handleRating} photoId={photo.id} />
