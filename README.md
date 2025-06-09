@@ -40,7 +40,7 @@ _Updates_ and _Privacy Policy & Terms of Use_ Pages are also available.
 
 **Features**
 
-![Rating](https://materials.tochanenko.com/github/voting.png)
+<img src="https://materials.tochanenko.com/github/voting.png" width="512">
 
 _Rating_ - you can leave rating for any photo using the 5-star rating system. Each user can vote only one using one device / browser.
 
@@ -56,7 +56,7 @@ _Slow Internet Optimisations_ - the project has a top loading bar that indicates
 
 _Day and Night Themes_ - you can choose between Day, Night or Auto theme depending on your preferences. Theme toggle is located in a Header.
 
-![Mobile](https://materials.tochanenko.com/github/mobile.png)
+<img src="https://materials.tochanenko.com/github/mobile.png" width="256">
 
 _Relative Layout_ - the project has relative layout so it can be used on devices of various sizes: Desktops, Tablets, and Phones.
 
