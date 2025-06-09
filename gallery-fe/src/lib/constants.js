@@ -4,7 +4,7 @@ export const VERSION = "v1.0.1";
 
 const LOCAL_URL = "http://localhost:3001";
 
-const USE_LOCAL = false;
+const USE_LOCAL = true;
 
 export const PHOTO_URL = 'http://materials.tochanenko.com/gallery_photos';
 
