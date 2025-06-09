@@ -24,15 +24,15 @@
 
 **Pages**
 
-![Homepage Preview](https://materials.tochanenko.com/github/homepage.png)
+<img src="https://materials.tochanenko.com/github/homepage.png">
 
 _Homepage_
 
-![Category Preview](https://materials.tochanenko.com/github/category.png)
+<img src="https://materials.tochanenko.com/github/category.png">
 
 _Category Page_
 
-![Photo Preview](https://materials.tochanenko.com/github/photo.png)
+<img src="https://materials.tochanenko.com/github/photo.png">
 
 _Photo Page_
 
@@ -44,7 +44,7 @@ _Updates_ and _Privacy Policy & Terms of Use_ Pages are also available.
 
 _Rating_ - you can leave rating for any photo using the 5-star rating system. Each user can vote only one using one device / browser.
 
-![Comments](https://materials.tochanenko.com/github/comments.png)
+<img src="https://materials.tochanenko.com/github/comments.png">
 
 _Comments_ - you can preview and leave comments for any image. Before posting your first comment you should set a name, and you can change your avatar image by tapping on it. All avatars are generated randomly, so you can have fun looking for an image that suits you well!
 
