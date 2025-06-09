@@ -28,7 +28,7 @@
 
 _Homepage_
 
-<img src="https://materials.tochanenko.com/github/category.png">
+<img src="https://materials.tochanenko.com/github/category-2.png">
 
 _Category Page_
 
